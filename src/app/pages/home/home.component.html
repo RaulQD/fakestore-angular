@@ -1,0 +1,36 @@
+<main class="main">
+    <section class="home section">
+        <div class="home__container container grid">
+            <div class="home__data">
+                <h1 class="home__title">
+                    Nueva Colección <br />
+                    de Ropa.
+                </h1>
+                <p class="home__description">
+                    La nueva colección de ropa de las mejores<br />
+                    marcas de este año.
+                </p>
+                <a [routerLink]="['/fakestore/products']" class="home__button">Explorar</a>
+            </div>
+            <div class="home__image">
+                <img class="home__image--one" src="../../../assets/img/home1.png" alt="home1" />
+                <img class="home__image--two" src="../../../assets/img/home2.png" alt="home2" />
+            </div>
+        </div>
+    </section>
+    <section class="category section">
+        <h2 class="category__title">Nueva Categoria</h2>
+        <div class="category__container container grid">
+            <app-category
+                *ngFor="let image of imageCategory"
+                [imageCategory]="image"
+            ></app-category>
+        </div>
+    </section>
+    <section class="best section">
+        <app-best-products></app-best-products>
+    </section>
+    <section class="featured section">
+        <app-content></app-content>
+    </section>
+</main>

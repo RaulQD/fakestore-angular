@@ -1,0 +1,84 @@
+<header class="header" [ngClass]="{ scrolled: scrolled }">
+    <nav class="nav container">
+        <div class="nav__logo">
+            <a [routerLink]="['/fakestore/home']" class="nav__logo--content">
+                <img class="nav__logo-img" src="../../../../assets/icon/logo.svg" alt="logo" />
+                <span class="nav__logo-text">ake</span>Store
+            </a>
+        </div>
+        <div class="nav__menu">
+            <ul class="nav__list">
+                <li class="nav__items">
+                    <a
+                        [routerLink]="['/fakestore/home']"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        class="nav__link"
+                        >Inicio</a
+                    >
+                </li>
+                <li class="nav__items">
+                    <a
+                        [routerLink]="['/fakestore/products']"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        class="nav__link"
+                        >Productos</a
+                    >
+                </li>
+                <li class="nav__items"><a class="nav__link">Accesorios</a></li>
+                <li class="nav__items">
+                    <a
+                        [routerLink]="['/fakestore/about']"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        class="nav__link"
+                        >Nosotros</a
+                    >
+                </li>
+            </ul>
+        </div>
+        <div class="nav__cart">
+            <ul class="nav__list">
+                <li class="nav__items">
+                    <a class="nav__link"> Soporte </a>
+                </li>
+                <li class="nav__items dropdown">
+                    <button class="nav__link dropdown__button" (click)="toogleDropdown()">
+                        <img src="../../../../assets/icon/user.svg" alt="user" class="nav__icons" />
+                    </button>
+                    <ul class="dropdown__menu" [ngClass]="showDropDown ? 'dropdown__active' : ''">
+                        <li class="dropdown__item">
+                            <button 
+                                class="dropdown__menu--item dropdown__button--item"
+                                (click)="toogleModal()"
+                                >
+                                Inicia Sesión
+                        </button>
+                        </li>
+                        <li clasS="dropdown__item">
+                            <a
+                                [routerLink]="['/fakestore/myaccount/registration']"
+                                class="dropdown__menu--item"
+                                (click)="closeDropdown()"
+                            >
+                                Regístrate
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav__items">
+                    <button type="button" class="nav__link nav__cart" (click)="toogleCart()">
+                        <img
+                            src="../../../../assets/icon/shopping-bag.svg"
+                            alt="cart"
+                            class="nav__icons"
+                        />
+                    </button>
+                    <app-shared-cart></app-shared-cart>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<app-modal></app-modal>

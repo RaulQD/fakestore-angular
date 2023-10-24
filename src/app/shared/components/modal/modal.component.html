@@ -1,0 +1,18 @@
+<div class="modal__container" [ngClass]="showModal ? 'show-modal' : ''">
+    <div class="modal__content" [ngClass]="showModal ? 'show-content' : ''">
+        <div class="modal__header">
+            <img src="../../../../assets/icon/logo.svg" alt="logo" class="modal__header--logo" />
+            <button class="modal__close" (click)="closeModal()">
+                <img
+                    src="../../../../assets/icon/close.svg"
+                    alt="close"
+                    class="modal__close--icon"
+                />
+            </button>
+        </div>
+        <div class="modal__body">
+            <app-login></app-login>
+        </div>
+        <div class="modal__footer"></div>
+    </div>
+</div>

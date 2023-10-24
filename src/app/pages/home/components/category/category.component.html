@@ -1,0 +1,9 @@
+<article class="category__card">
+    <img [src]="imageCategory.url" [alt]="imageCategory.alt" class="category__image" />
+    <a class="category__link" [routerLink]="['/fakestore/products']">
+        <div class="category__data">
+            <h2 class="category__name">{{ imageCategory.title }}</h2>
+            <span class="category__text">{{ imageCategory.text }}</span>
+        </div>
+    </a>
+</article>

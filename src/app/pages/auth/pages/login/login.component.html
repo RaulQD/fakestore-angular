@@ -1,0 +1,43 @@
+<div class="login">
+    <div class="login__container">
+        <h3 class="login__title">Inicia Sesión</h3>
+        <form class="form" autocomplete="off">
+            <div class="form__container">
+                <div class="form__box">
+                    <label for="email" class="form__label">Correo Electronico</label>
+                    <input
+                        type="text"
+                        class="form__input"
+                        id="email"
+                        name="email"
+                        placeholder="Ingresa tú correo electronico"
+                    />
+                </div>
+                <div class="form__box">
+                    <label for="password" class="form__label">Contraseña</label>
+                    <input
+                        type="text"
+                        id="password"
+                        name="password"
+                        class="form__input"
+                        placeholder="Ingresa tú contraseña"
+                    />
+                </div>
+            </div>
+            <div class="form__button">
+                <button type="submit" class="button__signin">Ingresar</button>
+                <p class="form__text">o</p>
+                <p class="form__text">
+                    ¿No tienes Cuenta?
+                    <a
+                        [routerLink]="['/fakestore/myaccount/registration']"
+                        class="form__signup--register"
+                        (click)="closeModal()"
+                    >
+                        Registrate.
+                    </a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.category__card {
+    justify-self: center;
+}
+.category__image {
+    width: 270px;
+    margin-bottom: 0.75rem;
+}
+.category__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 0.75rem;
+    color: #02021d;
+}
+
+.category__name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #02021d;
+}
+.category__text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #a3a3aa;
+}

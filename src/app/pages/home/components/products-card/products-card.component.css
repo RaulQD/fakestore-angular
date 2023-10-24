@@ -1,0 +1,9 @@
+.best__card {
+    background-color: #f5f6f8;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    border-radius: 0.625rem;
+}
+.best__card--img {
+    width: 270px;
+    margin-bottom: 3rem;
+}

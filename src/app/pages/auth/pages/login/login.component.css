@@ -1,0 +1,67 @@
+.login__title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: start;
+    margin-top: 2rem;
+    margin-bottom:1.5rem;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    height: 100%;
+}
+.form__container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.form__box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* width: 100%; */
+}
+.form__label{
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: start;
+}
+.form__input{
+    border:none;
+    border-bottom: 1px solid #c4c4c4;
+    padding: 0.625rem 1rem 0.625rem 0;
+    font-size: 0.875rem;
+    outline: none;
+}
+.form__button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+}
+.button__signin{
+    background-color: #01727f;
+    border:none;
+    padding: 0.625rem 1rem;
+    font-size: 1.125rem;
+    width:100%;
+    border-radius: 10px;
+    margin-top:1.125rem;
+    color:#ffffff;
+    cursor:pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.button__signin:hover{
+    background-color: #015c6f;
+}
+.form__text{
+    font-size: 0.875rem;
+
+}
+.form__signup--register{
+    font-weight: 500;
+    color:#01727f;
+    text-decoration: underline;
+}

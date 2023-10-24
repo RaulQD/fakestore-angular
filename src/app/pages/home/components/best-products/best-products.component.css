@@ -1,0 +1,30 @@
+.best__container {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 1.875rem;
+    width: 954px;
+}
+
+.best__title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.best__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.best__button--product {
+    background-color: #01727f;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+    /* font-weight: 500; */
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.best__button--product:hover {
+    background-color: #015c6f;
+}

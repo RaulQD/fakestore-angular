@@ -1,0 +1,7 @@
+<h2 class="best__title">Nuestros Productos</h2>
+<div class="best__container container grid">
+    <app-products-card *ngFor="let image of products" [imageProducts]="image"></app-products-card>
+</div>
+<div class="best__button">
+    <a [routerLink]="['/fakestore/products']" class="best__button--product">Comprar Ahora</a>
+</div>
