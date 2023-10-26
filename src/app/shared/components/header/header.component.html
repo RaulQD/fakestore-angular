@@ -1,4 +1,4 @@
-<header class="header" [ngClass]="{ scrolled: scrolled }">
+<header class="header">
     <nav class="nav container">
         <div class="nav__logo">
             <a [routerLink]="['/fakestore/home']" class="nav__logo--content">
@@ -7,7 +7,7 @@
             </a>
         </div>
         <div class="nav__menu">
-            <ul class="nav__list">
+            <ul class="nav__list" (click)=" closeDropdown()">
                 <li class="nav__items">
                     <a
                         [routerLink]="['/fakestore/home']"
@@ -26,7 +26,9 @@
                         >Productos</a
                     >
                 </li>
-                <li class="nav__items"><a class="nav__link">Accesorios</a></li>
+                <li class="nav__items">
+                    <a [routerLink]="['/fakestore/accessories']" class="nav__link">Accesorios</a>
+                </li>
                 <li class="nav__items">
                     <a
                         [routerLink]="['/fakestore/about']"
@@ -74,6 +76,7 @@
                             alt="cart"
                             class="nav__icons"
                         />
+                        <p class="button-item__badge">0</p>
                     </button>
                     <app-shared-cart></app-shared-cart>
                 </li>

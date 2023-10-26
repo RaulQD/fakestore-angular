@@ -39,6 +39,7 @@
     align-items: center;
     gap: 0.75rem;
     color: #ffffff;
+    cursor:pointer;
 }
 .footer__social--img {
     width: 24px;

@@ -1,0 +1,21 @@
+.products-body{
+    padding: 7rem 0 1rem;
+    width:100%;
+}
+.products-section{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap:2.5rem;
+}
+.aside{
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: red;
+    /* position: sticky;
+    top: 4rem; */
+}
+.list__products{
+    width: calc(100% - 270px);
+}

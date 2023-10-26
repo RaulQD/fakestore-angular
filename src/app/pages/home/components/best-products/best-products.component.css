@@ -1,8 +1,8 @@
 .best__container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, max-content);
     justify-content: center;
     gap: 1.875rem;
-    width: 954px;
+    /* width: 954px; */
 }
 
 .best__title {
@@ -20,7 +20,6 @@
     border-radius: 2rem;
     padding: 0.625rem 1.25rem;
     font-size: 1rem;
-    /* font-weight: 500; */
     color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s ease;

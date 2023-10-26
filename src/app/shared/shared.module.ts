@@ -7,9 +7,10 @@ import { RouterModule } from '@angular/router';
 import { SharedCartComponent } from './components/shared-cart/shared-cart.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { LoginModule } from '../pages/auth/pages/login/login.module';
+import { SharedSearchComponent } from './components/shared-search/shared-search.component';
 
 @NgModule({
-    declarations: [HeaderComponent, FooterComponent, SharedCartComponent, ModalComponent],
+    declarations: [HeaderComponent, FooterComponent, SharedCartComponent, ModalComponent, SharedSearchComponent],
     imports: [CommonModule, HttpClientModule, RouterModule, LoginModule],
     exports: [HeaderComponent, FooterComponent],
 })
