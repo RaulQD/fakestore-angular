@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ImageCardCategory } from 'src/app/interface/categoryImage.interface';
+import { SharedService } from 'src/app/shared/service/shared.service';
 
 @Component({
     selector: 'app-home',
@@ -7,6 +8,9 @@ import { ImageCardCategory } from 'src/app/interface/categoryImage.interface';
     styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
+
+    private sharedService = inject(SharedService);
+
     imageCategory: ImageCardCategory[] = [
         {
             url: '../../../assets/img/new1.png',

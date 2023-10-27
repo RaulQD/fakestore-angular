@@ -1,3 +1,6 @@
-<div class="products-container grid">
+<div class="products-container grid" *ngIf="productsList.length >= 0; else NotResult">
      <app-card-produts *ngFor="let products of productsList" [products]="products"></app-card-produts>
 </div>
+<ng-template #NotResult>
+     <p>No se encontraron resultados para tu busqueada</p>
+</ng-template>

@@ -1,20 +1,17 @@
 <article>
     <a href="" class="card__product">
-        <div class="card__image">
-            <img src="{{products.images}}" alt="" class="card__product--img">
-        </div>
+        <img src="{{products.images}}" alt="" class="card__product--img">
         <div class="card__info">
-            <p class="card__info--title"> {{products.title}}</p>
-            <span class="card__info--text">{{truncateString(products.description,45)}}</span>
-        </div>
-        <div class="card__price">
+            <h3 class="card__info--title"> {{products.title}}</h3>
             <div class="card__price--content">
                 <p>{{products.price}}</p>
-                <span>245</span>
             </div>
-            <div class="card__action--content">
-                <button type="button" class="add__button--cart">Agregar al carrito</button>
-            </div>
+        </div>
+        <div class="card__action">
+            <button type="button" class="add__button--cart">Agregar al carrito</button>
+            <button type="button" class="add--button--wishlist">
+                <img src="../../../../../assets/icon/heart.svg" alt="heart" class="add-wishlist">
+            </button>
         </div>
     </a>
 </article>

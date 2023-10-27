@@ -8,9 +8,10 @@ import { SharedCartComponent } from './components/shared-cart/shared-cart.compon
 import { ModalComponent } from './components/modal/modal.component';
 import { LoginModule } from '../pages/auth/pages/login/login.module';
 import { SharedSearchComponent } from './components/shared-search/shared-search.component';
+import { SharedWishlistComponent } from './components/shared-wishlist/shared-wishlist.component';
 
 @NgModule({
-    declarations: [HeaderComponent, FooterComponent, SharedCartComponent, ModalComponent, SharedSearchComponent],
+    declarations: [HeaderComponent, FooterComponent, SharedCartComponent, ModalComponent, SharedSearchComponent, SharedWishlistComponent],
     imports: [CommonModule, HttpClientModule, RouterModule, LoginModule],
     exports: [HeaderComponent, FooterComponent],
 })

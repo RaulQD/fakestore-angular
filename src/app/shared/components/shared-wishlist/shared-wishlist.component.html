@@ -1,0 +1,292 @@
+<div class="overlay" [ngClass]="showWishList ? 'show-overlay' : ''" (click)="toogleWishlist()"></div>
+    <aside class="wishlist" [ngClass]="showWishList ? 'show-wishlist' : ''">
+        <div class="wishlist__product" > 
+            <div class="wishlist__header">
+                <h3 class="wishlist__title">Lista de deseos</h3>
+                <button type="button" class="button-action" (click)="toogleWishlist()">
+                    <img
+                        src="../../../../assets/icon/close.svg"
+                        alt="close"
+                        class="icon-button"
+                    />
+                </button>
+            </div>
+            <div class="wishlist__body">
+                <div class="wishlist__body--content">
+                    <div class="wishlist__body--item">
+                        <img src="../../../../assets/img/casaca2.png" alt="casaca2" class="wishlist-img">
+                    </div>
+                    <div class="wishlist__body--info">
+                        <div class="wishlist__body--info__content">
+                            <div class="wishlist__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="wishlist__body--color">
+                                <p>color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="wishlist__actions ">
+                            <div class="actions-buttons dropdown">
+                                <button class="button-action button-dots" (click)="toogleDropDown()">
+                                    <i class="bx bx-dots-horizontal-rounded icon-dots"></i>
+                                </button>
+                                <ul class="dropdown__menu" [ngClass]="showDropdown ? 'dropdown__show' : ''">
+                                    <li class="dropdown__menu--item">
+                                        <button type="button" class="dropdown__button">Quitar</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="add-cart">
+                                <img src="../../../../assets/icon/shopping-cart-black.svg" alt="shopping-cart" class="icon-cart">
+                                Agregar al carrito
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist__body--content">
+                    <div class="wishlist__body--item">
+                        <img src="../../../../assets/img/casaca2.png" alt="casaca2" class="wishlist-img">
+                    </div>
+                    <div class="wishlist__body--info">
+                        <div class="wishlist__body--info__content">
+                            <div class="wishlist__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="wishlist__body--color">
+                                <p>color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="wishlist__actions ">
+                            <div class="actions-buttons dropdown">
+                                <button class="button-action button-dots" (click)="toogleDropDown()">
+                                    <i class="bx bx-dots-horizontal-rounded icon-dots"></i>
+                                </button>
+                                <ul class="dropdown__menu" [ngClass]="showDropdown ? 'dropdown__show' : ''">
+                                    <li class="dropdown__menu--item">
+                                        <button type="button" class="dropdown__button">Quitar</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="add-cart">
+                                <img src="../../../../assets/icon/shopping-cart-black.svg" alt="shopping-cart" class="icon-cart">
+                                Agregar al carrito
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist__body--content">
+                    <div class="wishlist__body--item">
+                        <img src="../../../../assets/img/casaca2.png" alt="casaca2" class="wishlist-img">
+                    </div>
+                    <div class="wishlist__body--info">
+                        <div class="wishlist__body--info__content">
+                            <div class="wishlist__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="wishlist__body--color">
+                                <p>color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="wishlist__actions ">
+                            <div class="actions-buttons dropdown">
+                                <button class="button-action button-dots" (click)="toogleDropDown()">
+                                    <i class="bx bx-dots-horizontal-rounded icon-dots"></i>
+                                </button>
+                                <ul class="dropdown__menu" [ngClass]="showDropdown ? 'dropdown__show' : ''">
+                                    <li class="dropdown__menu--item">
+                                        <button type="button" class="dropdown__button">Quitar</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="add-cart">
+                                <img src="../../../../assets/icon/shopping-cart-black.svg" alt="shopping-cart" class="icon-cart">
+                                Agregar al carrito
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist__body--content">
+                    <div class="wishlist__body--item">
+                        <img src="../../../../assets/img/casaca2.png" alt="casaca2" class="wishlist-img">
+                    </div>
+                    <div class="wishlist__body--info">
+                        <div class="wishlist__body--info__content">
+                            <div class="wishlist__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="wishlist__body--color">
+                                <p>color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="wishlist__actions ">
+                            <div class="actions-buttons dropdown">
+                                <button class="button-action button-dots" (click)="toogleDropDown()">
+                                    <i class="bx bx-dots-horizontal-rounded icon-dots"></i>
+                                </button>
+                                <ul class="dropdown__menu" [ngClass]="showDropdown ? 'dropdown__show' : ''">
+                                    <li class="dropdown__menu--item">
+                                        <button type="button" class="dropdown__button">Quitar</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="add-cart">
+                                <img src="../../../../assets/icon/shopping-cart-black.svg" alt="shopping-cart" class="icon-cart">
+                                Agregar al carrito
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist__body--content">
+                    <div class="wishlist__body--item">
+                        <img src="../../../../assets/img/casaca2.png" alt="casaca2" class="wishlist-img">
+                    </div>
+                    <div class="wishlist__body--info">
+                        <div class="wishlist__body--info__content">
+                            <div class="wishlist__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="wishlist__body--color">
+                                <p>color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="wishlist__actions ">
+                            <div class="actions-buttons dropdown">
+                                <button class="button-action button-dots" (click)="toogleDropDown()">
+                                    <i class="bx bx-dots-horizontal-rounded icon-dots"></i>
+                                </button>
+                                <ul class="dropdown__menu" [ngClass]="showDropdown ? 'dropdown__show' : ''">
+                                    <li class="dropdown__menu--item">
+                                        <button type="button" class="dropdown__button">Quitar</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="add-cart">
+                                <img src="../../../../assets/icon/shopping-cart-black.svg" alt="shopping-cart" class="icon-cart">
+                                Agregar al carrito
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist__body--content">
+                    <div class="wishlist__body--item">
+                        <img src="../../../../assets/img/casaca2.png" alt="casaca2" class="wishlist-img">
+                    </div>
+                    <div class="wishlist__body--info">
+                        <div class="wishlist__body--info__content">
+                            <div class="wishlist__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="wishlist__body--color">
+                                <p>color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="wishlist__actions ">
+                            <div class="actions-buttons dropdown">
+                                <button class="button-action button-dots" (click)="toogleDropDown()">
+                                    <i class="bx bx-dots-horizontal-rounded icon-dots"></i>
+                                </button>
+                                <ul class="dropdown__menu" [ngClass]="showDropdown ? 'dropdown__show' : ''">
+                                    <li class="dropdown__menu--item">
+                                        <button type="button" class="dropdown__button">Quitar</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="add-cart">
+                                <img src="../../../../assets/icon/shopping-cart-black.svg" alt="shopping-cart" class="icon-cart">
+                                Agregar al carrito
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist__body--content">
+                    <div class="wishlist__body--item">
+                        <img src="../../../../assets/img/casaca2.png" alt="casaca2" class="wishlist-img">
+                    </div>
+                    <div class="wishlist__body--info">
+                        <div class="wishlist__body--info__content">
+                            <div class="wishlist__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="wishlist__body--color">
+                                <p>color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="wishlist__actions ">
+                            <div class="actions-buttons dropdown">
+                                <button class="button-action button-dots" (click)="toogleDropDown()">
+                                    <i class="bx bx-dots-horizontal-rounded icon-dots"></i>
+                                </button>
+                                <ul class="dropdown__menu" [ngClass]="showDropdown ? 'dropdown__show' : ''">
+                                    <li class="dropdown__menu--item">
+                                        <button type="button" class="dropdown__button">Quitar</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="add-cart">
+                                <img src="../../../../assets/icon/shopping-cart-black.svg" alt="shopping-cart" class="icon-cart">
+                                Agregar al carrito
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist__body--content">
+                    <div class="wishlist__body--item">
+                        <img src="../../../../assets/img/casaca2.png" alt="casaca2" class="wishlist-img">
+                    </div>
+                    <div class="wishlist__body--info">
+                        <div class="wishlist__body--info__content">
+                            <div class="wishlist__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="wishlist__body--color">
+                                <p>color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="wishlist__actions ">
+                            <div class="actions-buttons dropdown">
+                                <button class="button-action button-dots" (click)="toogleDropDown()">
+                                    <i class="bx bx-dots-horizontal-rounded icon-dots"></i>
+                                </button>
+                                <ul class="dropdown__menu" [ngClass]="showDropdown ? 'dropdown__show' : ''">
+                                    <li class="dropdown__menu--item">
+                                        <button type="button" class="dropdown__button">Quitar</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="add-cart">
+                                <img src="../../../../assets/icon/shopping-cart-black.svg" alt="shopping-cart" class="icon-cart">
+                                Agregar al carrito
+                            </button>
+     
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <ng-template #notResult>
+                <p>Tu lista de deseos está vacia</p>
+            </ng-template> -->
+        </div>
+    </aside>

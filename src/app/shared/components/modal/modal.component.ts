@@ -23,6 +23,6 @@ export class ModalComponent implements OnInit, OnDestroy {
     }
     closeModal() {
         this.modalService.setShowModal(false);
-        console.log('closeModal');
+        
     }
 }

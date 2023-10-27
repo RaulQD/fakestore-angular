@@ -10,6 +10,7 @@ import { ModalService } from '../../service/modal.service';
 export class HeaderComponent {
     scrolled = false;
     showDropDown = false;
+    
     private sharedService = inject(SharedService);
     private modalService = inject(ModalService);
 
@@ -21,15 +22,23 @@ export class HeaderComponent {
             this.scrolled = false;
         }
     }
+    //TOOGLE CART
     toogleCart() {
         this.sharedService.setShowCart(true);
     }
+    //TOOGLE WISHLIST
+    toogleWishlist() {
+        this.sharedService.setShowWishlist(true);
+        console.log('toogleWishlist');
+    }
+    //TOOGLE DROPDOWN
     toogleDropdown() {
         this.showDropDown = !this.showDropDown;
     }
     closeDropdown() {
         this.showDropDown = false;
     }
+    //modal
     toogleModal() {
         this.modalService.setShowModal(true);
         //CERRAR EL MENU DESPLEGABLE

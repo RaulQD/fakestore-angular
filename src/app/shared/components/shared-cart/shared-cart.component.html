@@ -1,375 +1,321 @@
-<aside class="cart__container" [ngClass]="showCart ? 'show-cart' : ''">
-    <div class="cart__product">
-        <div class="cart__header">
-            <h3 class="cart__title">Carrito</h3>
-            <button type="button" class="cart__close" (click)="toogleCart()">
+<div class="overlay" [ngClass]="showCart ? 'show-overlay' : ''" (click)="toogleCart()"></div>
+    <aside class="cart__container" [ngClass]="showCart ? 'show-cart' : ''">
+        <div class="cart__product">
+            <div class="cart__header">
+                <h3 class="cart__title">Carrito</h3>
+                <button type="button" class="cart__close" (click)="toogleCart()">
+                    <img
+                        src="../../../../assets/icon/close.svg"
+                        alt="close"
+                        class="cart__close--icon"
+                    />
+                </button>
+            </div>
+            <div class="cart__body">
+                <div class="cart__body--content">
+                    <div class="cart__body--item">
+                        <img
+                            src="../../../../assets/img/casaca1.png"
+                            alt="casaca1"
+                            class="cart__body--img"
+                        />
+                    </div>
+                    <div class="cart__body--info">
+                        <div class="cart__body--info__content">
+                            <div class="cart__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="cart__body--color">
+                                <p>Color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="cart__quantity">
+                            <div class="cart__quantity--content">
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/minus.svg"
+                                        alt="minus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                                <p class="cart__quantity--text">1</p>
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/plus.svg"
+                                        alt="plus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                            </div>
+                            <div class="cart__quantity--delete">
+                                <img
+                                    src="../../../../assets/icon/trash-2.svg"
+                                    alt="trash"
+                                    class="cart__quantity--icon"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__body--content">
+                    <div class="cart__body--item">
+                        <img
+                            src="../../../../assets/img/casaca1.png"
+                            alt="casaca1"
+                            class="cart__body--img"
+                        />
+                    </div>
+                    <div class="cart__body--info">
+                        <div class="cart__body--info__content">
+                            <div class="cart__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="cart__body--color">
+                                <p>Color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="cart__quantity">
+                            <div class="cart__quantity--content">
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/minus.svg"
+                                        alt="minus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                                <p class="cart__quantity--text">1</p>
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/plus.svg"
+                                        alt="plus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                            </div>
+                            <div class="cart__quantity--delete">
+                                <img
+                                    src="../../../../assets/icon/trash-2.svg"
+                                    alt="trash"
+                                    class="cart__quantity--icon"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__body--content">
+                    <div class="cart__body--item">
+                        <img
+                            src="../../../../assets/img/casaca1.png"
+                            alt="casaca1"
+                            class="cart__body--img"
+                        />
+                    </div>
+                    <div class="cart__body--info">
+                        <div class="cart__body--info__content">
+                            <div class="cart__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="cart__body--color">
+                                <p>Color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="cart__quantity">
+                            <div class="cart__quantity--content">
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/minus.svg"
+                                        alt="minus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                                <p class="cart__quantity--text">1</p>
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/plus.svg"
+                                        alt="plus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                            </div>
+                            <div class="cart__quantity--delete">
+                                <img
+                                    src="../../../../assets/icon/trash-2.svg"
+                                    alt="trash"
+                                    class="cart__quantity--icon"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__body--content">
+                    <div class="cart__body--item">
+                        <img
+                            src="../../../../assets/img/casaca1.png"
+                            alt="casaca1"
+                            class="cart__body--img"
+                        />
+                    </div>
+                    <div class="cart__body--info">
+                        <div class="cart__body--info__content">
+                            <div class="cart__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="cart__body--color">
+                                <p>Color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="cart__quantity">
+                            <div class="cart__quantity--content">
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/minus.svg"
+                                        alt="minus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                                <p class="cart__quantity--text">1</p>
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/plus.svg"
+                                        alt="plus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                            </div>
+                            <div class="cart__quantity--delete">
+                                <img
+                                    src="../../../../assets/icon/trash-2.svg"
+                                    alt="trash"
+                                    class="cart__quantity--icon"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__body--content">
+                    <div class="cart__body--item">
+                        <img
+                            src="../../../../assets/img/casaca1.png"
+                            alt="casaca1"
+                            class="cart__body--img"
+                        />
+                    </div>
+                    <div class="cart__body--info">
+                        <div class="cart__body--info__content">
+                            <div class="cart__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="cart__body--color">
+                                <p>Color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="cart__quantity">
+                            <div class="cart__quantity--content">
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/minus.svg"
+                                        alt="minus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                                <p class="cart__quantity--text">1</p>
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/plus.svg"
+                                        alt="plus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                            </div>
+                            <div class="cart__quantity--delete">
+                                <img
+                                    src="../../../../assets/icon/trash-2.svg"
+                                    alt="trash"
+                                    class="cart__quantity--icon"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__body--content">
+                    <div class="cart__body--item">
+                        <img
+                            src="../../../../assets/img/casaca1.png"
+                            alt="casaca1"
+                            class="cart__body--img"
+                        />
+                    </div>
+                    <div class="cart__body--info">
+                        <div class="cart__body--info__content">
+                            <div class="cart__body--title">
+                                <h3>Sopa Everyday mask</h3>
+                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                            </div>
+                            <div class="cart__body--color">
+                                <p>Color : <span>Negro</span></p>
+                                <p>Tamaño: <span>Extra Large</span></p>
+                            </div>
+                        </div>
+                        <div class="cart__quantity">
+                            <div class="cart__quantity--content">
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/minus.svg"
+                                        alt="minus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                                <p class="cart__quantity--text">1</p>
+                                <button class="cart__quantity--btn">
+                                    <img
+                                        src="../../../../assets/icon/plus.svg"
+                                        alt="plus"
+                                        class="cart__quantity--icon"
+                                    />
+                                </button>
+                            </div>
+                            <div class="cart__quantity--delete">
+                                <img
+                                    src="../../../../assets/icon/trash-2.svg"
+                                    alt="trash"
+                                    class="cart__quantity--icon"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart__buy">
+            <div class="cart__total">
+                <div>
+                    <div class="cart__total--content">
+                        <p class="cart__total--subtotal">SubTotal</p>
+                        <span class="cart__total--subprice">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                    </div>
+                    <div class="cart__total--content">
+                        <p class="cart__total--text">Total</p>
+                        <span class="cart__total--price">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                    </div>
+                </div>
+            </div>
+            <button class="cart__buy--btn">
                 <img
-                    src="../../../../assets/icon/close.svg"
-                    alt="close"
-                    class="cart__close--icon"
+                    src="../../../../assets/icon/shopping-cart.svg"
+                    alt="shopping-cart"
+                    class="cart__shop"
                 />
+                Continuar compra
             </button>
         </div>
-        <div class="cart__body">
-            <div class="cart__body--content">
-                <div class="cart__body--item">
-                    <img
-                        src="../../../../assets/img/casaca1.png"
-                        alt="casaca1"
-                        class="cart__body--img"
-                    />
-                </div>
-                <div class="cart__body--info">
-                    <div class="cart__body--info__content">
-                        <div class="cart__body--title">
-                            <h3>Sopa Everyday mask</h3>
-                            <span class="cart__price--text">0.00</span>
-                        </div>
-                        <div class="cart__body--color">
-                            <p>color : <span>Negro</span></p>
-                            <p>Tamaño: <span>Extra Large</span></p>
-                        </div>
-                    </div>
-
-                    <div class="cart__quantity">
-                        <div class="cart__quantity--content">
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/minus.svg"
-                                    alt="minus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                            <p class="cart__quantity--text">1</p>
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/plus.svg"
-                                    alt="plus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                        </div>
-                        <div class="cart__quantity--delete">
-                            <img
-                                src="../../../../assets/icon/trash-2.svg"
-                                alt="trash"
-                                class="cart__quantity--icon"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart__body--content">
-                <div class="cart__body--item">
-                    <img
-                        src="../../../../assets/img/casaca1.png"
-                        alt="casaca1"
-                        class="cart__body--img"
-                    />
-                </div>
-                <div class="cart__body--info">
-                    <div class="cart__body--info__content">
-                        <div class="cart__body--title">
-                            <h3>Sopa Everyday mask</h3>
-                            <span class="cart__price--text">0.00</span>
-                        </div>
-                        <div class="cart__body--color">
-                            <p>color : <span>Negro</span></p>
-                            <p>Tamaño: <span>Extra Large</span></p>
-                        </div>
-                    </div>
-
-                    <div class="cart__quantity">
-                        <div class="cart__quantity--content">
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/minus.svg"
-                                    alt="minus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                            <p class="cart__quantity--text">1</p>
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/plus.svg"
-                                    alt="plus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                        </div>
-                        <div class="cart__quantity--delete">
-                            <img
-                                src="../../../../assets/icon/trash-2.svg"
-                                alt="trash"
-                                class="cart__quantity--icon"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart__body--content">
-                <div class="cart__body--item">
-                    <img
-                        src="../../../../assets/img/casaca1.png"
-                        alt="casaca1"
-                        class="cart__body--img"
-                    />
-                </div>
-                <div class="cart__body--info">
-                    <div class="cart__body--info__content">
-                        <div class="cart__body--title">
-                            <h3>Sopa Everyday mask</h3>
-                            <span class="cart__price--text">0.00</span>
-                        </div>
-                        <div class="cart__body--color">
-                            <p>color : <span>Negro</span></p>
-                            <p>Tamaño: <span>Extra Large</span></p>
-                        </div>
-                    </div>
-
-                    <div class="cart__quantity">
-                        <div class="cart__quantity--content">
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/minus.svg"
-                                    alt="minus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                            <p class="cart__quantity--text">1</p>
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/plus.svg"
-                                    alt="plus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                        </div>
-                        <div class="cart__quantity--delete">
-                            <img
-                                src="../../../../assets/icon/trash-2.svg"
-                                alt="trash"
-                                class="cart__quantity--icon"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart__body--content">
-                <div class="cart__body--item">
-                    <img
-                        src="../../../../assets/img/casaca1.png"
-                        alt="casaca1"
-                        class="cart__body--img"
-                    />
-                </div>
-                <div class="cart__body--info">
-                    <div class="cart__body--info__content">
-                        <div class="cart__body--title">
-                            <h3>Sopa Everyday mask</h3>
-                            <span class="cart__price--text">0.00</span>
-                        </div>
-                        <div class="cart__body--color">
-                            <p>color : <span>Negro</span></p>
-                            <p>Tamaño: <span>Extra Large</span></p>
-                        </div>
-                    </div>
-
-                    <div class="cart__quantity">
-                        <div class="cart__quantity--content">
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/minus.svg"
-                                    alt="minus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                            <p class="cart__quantity--text">1</p>
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/plus.svg"
-                                    alt="plus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                        </div>
-                        <div class="cart__quantity--delete">
-                            <img
-                                src="../../../../assets/icon/trash-2.svg"
-                                alt="trash"
-                                class="cart__quantity--icon"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart__body--content">
-                <div class="cart__body--item">
-                    <img
-                        src="../../../../assets/img/casaca1.png"
-                        alt="casaca1"
-                        class="cart__body--img"
-                    />
-                </div>
-                <div class="cart__body--info">
-                    <div class="cart__body--info__content">
-                        <div class="cart__body--title">
-                            <h3>Sopa Everyday mask</h3>
-                            <span class="cart__price--text">0.00</span>
-                        </div>
-                        <div class="cart__body--color">
-                            <p>color : <span>Negro</span></p>
-                            <p>Tamaño: <span>Extra Large</span></p>
-                        </div>
-                    </div>
-
-                    <div class="cart__quantity">
-                        <div class="cart__quantity--content">
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/minus.svg"
-                                    alt="minus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                            <p class="cart__quantity--text">1</p>
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/plus.svg"
-                                    alt="plus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                        </div>
-                        <div class="cart__quantity--delete">
-                            <img
-                                src="../../../../assets/icon/trash-2.svg"
-                                alt="trash"
-                                class="cart__quantity--icon"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart__body--content">
-                <div class="cart__body--item">
-                    <img
-                        src="../../../../assets/img/casaca1.png"
-                        alt="casaca1"
-                        class="cart__body--img"
-                    />
-                </div>
-                <div class="cart__body--info">
-                    <div class="cart__body--info__content">
-                        <div class="cart__body--title">
-                            <h3>Sopa Everyday mask</h3>
-                            <span class="cart__price--text">0.00</span>
-                        </div>
-                        <div class="cart__body--color">
-                            <p>color : <span>Negro</span></p>
-                            <p>Tamaño: <span>Extra Large</span></p>
-                        </div>
-                    </div>
-
-                    <div class="cart__quantity">
-                        <div class="cart__quantity--content">
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/minus.svg"
-                                    alt="minus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                            <p class="cart__quantity--text">1</p>
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/plus.svg"
-                                    alt="plus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                        </div>
-                        <div class="cart__quantity--delete">
-                            <img
-                                src="../../../../assets/icon/trash-2.svg"
-                                alt="trash"
-                                class="cart__quantity--icon"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart__body--content">
-                <div class="cart__body--item">
-                    <img
-                        src="../../../../assets/img/casaca1.png"
-                        alt="casaca1"
-                        class="cart__body--img"
-                    />
-                </div>
-                <div class="cart__body--info">
-                    <div class="cart__body--info__content">
-                        <div class="cart__body--title">
-                            <h3>Sopa Everyday mask</h3>
-                            <span class="cart__price--text">0.00</span>
-                        </div>
-                        <div class="cart__body--color">
-                            <p>color : <span>Negro</span></p>
-                            <p>Tamaño: <span>Extra Large</span></p>
-                        </div>
-                    </div>
-
-                    <div class="cart__quantity">
-                        <div class="cart__quantity--content">
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/minus.svg"
-                                    alt="minus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                            <p class="cart__quantity--text">1</p>
-                            <button class="cart__quantity--btn">
-                                <img
-                                    src="../../../../assets/icon/plus.svg"
-                                    alt="plus"
-                                    class="cart__quantity--icon"
-                                />
-                            </button>
-                        </div>
-                        <div class="cart__quantity--delete">
-                            <img
-                                src="../../../../assets/icon/trash-2.svg"
-                                alt="trash"
-                                class="cart__quantity--icon"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cart__buy">
-        <div class="cart__total">
-            <div class="cart__line"></div>
-            <div>
-                <div class="cart__total--content">
-                    <p class="cart__total--text">SubTotal</p>
-                    <span class="cart__total--price">$ 0.00</span>
-                </div>
-                <div class="cart__total--content">
-                    <p class="cart__total--text">Total</p>
-                    <span class="cart__total--price">$ 0.00</span>
-                </div>
-            </div>
-        </div>
-        <button class="cart__buy--btn">
-            <img
-                src="../../../../assets/icon/shopping-cart.svg"
-                alt="shopping-cart"
-                class="cart__shop"
-            />
-            Continuar compra
-        </button>
-    </div>
-</aside>
+    </aside>

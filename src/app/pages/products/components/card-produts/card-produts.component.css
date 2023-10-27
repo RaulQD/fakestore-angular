@@ -1,42 +1,61 @@
 .card__product{
-    border: 1px solid #f5f6f8;
-    padding:1rem;
+    border: 1px solid #eeeaea;
+    /* padding:1rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 10px;
-    background-color: #f5f6f8;
+    /* background-color: #f5f6f8; */
 }
-
 .card__product--img{
     width:100%;
     height: 100%;
-    border-radius: 10px;
     object-fit: cover;
 }
 .card__info{
-    margin-bottom: 1rem;
+    padding: 0.75rem;
 }
 .card__info--title{
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
 }
 .card__info--text{
     text-wrap: balance;
+    font-size: 0.8125rem;
+    line-height: 1.5rem;
 }
-.card__price{
+.card__action{
+    padding: 0 0.75rem 0.75rem 0.75rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap:1rem;
 }
 .add__button--cart{
-    background-color: #01727f;
-    border: none;
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid #01727f;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    border-radius: 10px;
-    font-size: 0.8125rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
     font-weight: 500;
-    color: #ffffff;
+    color: #0b0b0b;
+    transition: all 0.3s ease-in-out;
+}
+.add--button--wishlist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid #01727f;
+    padding:0.375rem 0.5625rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.add-wishlist{
+    width:22px;
+    height: 22px;
+    color: #0b0b0b;
     transition: all 0.3s ease-in-out;
 }

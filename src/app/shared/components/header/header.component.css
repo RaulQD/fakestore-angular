@@ -88,13 +88,14 @@
     right: -8px;
     width: 15px;
     height: 15px;
-    background-color: red;
+    background-color: #098f9e;
     border-radius: 50%;
     color:#ffffff;
     font-size: 0.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* z-index:100; */
 }
 /* .dropdown{
     position: absolute;
@@ -137,12 +138,9 @@
     z-index: 2;
     animation: fadeIn 0.2s ease-in-out;
 }
-/* .dropdown__item:hover .dropdown__menu{
-    display: flex;
-} */
+
 .dropdown__active {
     display: block;
-    max-height: 100px;
 }
 
 @keyframes fadeIn {

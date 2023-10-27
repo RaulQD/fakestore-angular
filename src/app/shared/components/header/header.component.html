@@ -70,6 +70,12 @@
                     </ul>
                 </li>
                 <li class="nav__items">
+                    <button type="button" class="nav__link nav__cart" (click)="toogleWishlist()">
+                        <img src="../../../../assets/icon/heart.svg" alt="heart" class="nav__icons">
+                    </button>
+                    <app-shared-wishlist></app-shared-wishlist>
+                </li>
+                <li class="nav__items">
                     <button type="button" class="nav__link nav__cart" (click)="toogleCart()">
                         <img
                             src="../../../../assets/icon/shopping-bag.svg"
