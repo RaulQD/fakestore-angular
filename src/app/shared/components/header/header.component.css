@@ -69,7 +69,6 @@
 
 .nav__icons {
     width: 20px;
-    height: 20px;
     cursor: pointer;
 }
 .header.scrolled {
@@ -97,15 +96,6 @@
     align-items: center;
     /* z-index:100; */
 }
-/* .dropdown{
-    position: absolute;
-    top:70%;
-    right: 40px;
-    width: 250px;
-    max-height: 400px;
-    overflow: hidden;
-}
-*/
 
 .dropdown {
     cursor: pointer;

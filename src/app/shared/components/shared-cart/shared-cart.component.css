@@ -119,7 +119,7 @@
 
 .cart__body--color {
     color: #75869c;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
 }
 .cart__body--color span {
     margin-left: 0.5rem;
@@ -152,21 +152,17 @@
 }
 .cart__quantity--icon {
     width: 16px;
-    height: 16px;
 }
 .cart__quantity--text {
     font-weight: 600;
-    font-size: 12px;
+    font-size: 12px
 }
 .cart__quantity--delete {
     border: 1px solid #75869c;
     border-radius: 50%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
     cursor: pointer;
+    padding:0.5rem;
 }
 .cart__line {
     width: 100%;
@@ -209,7 +205,6 @@
 }
 .cart__shop {
     width: 20px;
-    height: 20px;
 }
 .cart__total--text,
 .cart__total--price{

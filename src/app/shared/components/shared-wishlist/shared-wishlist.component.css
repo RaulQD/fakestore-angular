@@ -24,7 +24,7 @@
     right: -100%;
     background-color: #ffffff;
     width: 450px;
-    height: 100vh;
+    height: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
@@ -52,7 +52,7 @@
 .wishlist__body {
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 85vh;
     overflow: scroll;
     scroll-snap-type: y mandatory;
     scroll-snap-align: start;
@@ -68,7 +68,7 @@
     width: 100%;
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.625rem;
     border-radius: 10px;
     padding:0.75rem 0;
 }
@@ -124,15 +124,15 @@
 }
 
 .icon-button {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 
 .wishlist__actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .add-cart {
@@ -153,14 +153,9 @@
     gap:0.625rem;
 }
 
-
-.icon-dots {
-    font-size: 20px;
-    border-radius: 10px;
-}
-.icon-cart{
-    width:18px;
-    height:18px;
+.icon-actions{
+    width:22px;
+    height: 22px;
 }
 
 .button-action {
@@ -172,62 +167,11 @@
     cursor: pointer;
 }
 
-.dropdown__menu {
-    position: absolute;
-    top: 230px;
-    right: 310px;
-    max-height: 100px;
-    min-width: 80px;
-    border-radius: 8px;
-    background-color: #ffffff;
-    display: none;
-    padding: 10px;
-    box-shadow:
-        0 5px 30px rgba(27, 31, 35, 0.1),
-        0 0 1px rgba(27, 31, 35, 0.4),
-        0 1px 2px rgba(27, 31, 35, 0.15);
-    z-index: 2;
-    animation: fadeIn 0.2s ease-in-out;
-}
-.dropdown__show{
-    display: block;
-    /* max-height: 100px; */
-}
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.99) translateY(-0.7em);
-        transform-origin: top;
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-.dropdown__menu--item {
+.delete-cart{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.875rem;
-    font-family: 'Poppins', sans-serif;
-    width: 100%;
-    cursor: pointer;
-    color: #0b0b0b;
-}
-.dropdown__menu--item:hover {
-    color: #01727f;
-    transition: color 0.4s;
-}
-
-.dropdown__button {
     background-color: transparent;
-    border: none;
+    border: 1px solid #01727f;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-}
-.dropdown__button:hover{
-    color: #01727f;
-    transition: color 0.4s;
+    border-radius: 10px;
+    padding:0.5rem 0.75rem;
 }

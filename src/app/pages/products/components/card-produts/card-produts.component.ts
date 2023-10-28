@@ -8,7 +8,7 @@ import { Products } from '../../interface/products.interface';
 })
 export class CardProdutsComponent {
   @Input() products!: Products;
-  
+  randomNumber: number = 0;
 
   truncateString(text: string | undefined, maxLength: number): string {
 
@@ -19,5 +19,4 @@ export class CardProdutsComponent {
     //retorna el texto truncado con los puntos suspensivos
     return text.substring(0, maxLength) + '...';
   }
-
 }

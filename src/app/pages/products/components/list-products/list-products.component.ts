@@ -9,7 +9,11 @@ import { Products } from '../../interface/products.interface';
 })
 export class ListProductsComponent implements OnInit{
 
- public productsList:Products[] = [];
+  public productsList: Products[] = [];
+  
+  visibilityProductsCount: number = 12;
+  startWith: number = 0;  
+  isLoading: boolean = false;
 
   ngOnInit(): void {
     this.getProducts();
@@ -21,5 +25,12 @@ export class ListProductsComponent implements OnInit{
       this.productsList = products;
       console.log(products);
     })
+  }
+  loadProducts() {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.visibilityProductsCount += 15;
+      this.isLoading = false;
+    }, 2000);
   }
 }
