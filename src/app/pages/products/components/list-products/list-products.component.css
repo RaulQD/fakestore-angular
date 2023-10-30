@@ -1,14 +1,11 @@
 .products-container{
     grid-template-columns: repeat(3, 1fr);
-    width:890px;   
 }
 .load-products{
     display: flex;
     justify-content: center;
     align-items: center;
-    width:100%; 
-    min-width: 890px;
-    margin:auto;
+
 }
 .load-button{
     font-weight: 600;

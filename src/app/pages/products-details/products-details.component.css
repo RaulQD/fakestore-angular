@@ -1,0 +1,106 @@
+.left, .right{
+    width:50%;
+    padding:30px;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    margin-bottom:1rem;
+}
+.add-quantity{
+    display: flex;
+}
+.details__images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+.option img{
+    width:140px;
+    height: 140px;
+    padding:10px;
+}
+.right{
+    padding: 50px 80px 50px 50px; 
+}
+.details__title{
+    margin:10px 0;
+    font-size: 1.5rem;
+}
+.price{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:0.625rem;
+    margin-bottom:1rem; 
+}
+.price__real{
+    color:#ff0000;
+}
+.price__discount{
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.75rem;
+}
+.quantity__title{
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+.quantity__input{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin:0 0.5rem;
+}
+.icon-quantity{
+    width:20px;
+}
+.actions{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    margin:1rem 0;
+}
+.actions-add,
+.actions-buy{
+    padding:8px;
+    border-radius: 10px;
+}
+.actions-add{
+    background-color: #d7d7d7;
+    border:none;
+    font-size:0.875rem;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.4s ease-in-out;
+    cursor:pointer;
+}
+.actions-add:hover{
+    background-color: #bdbdbd;
+    color:#ffffff;
+}
+.actions-buy{
+    color:#ffffff;
+    background-color: #01727f;
+    border:none;
+    font-size: 0.875rem;
+    text-align: center;
+    cursor:pointer;
+    transition: background-color 0.4s ease-in-out;
+}
+.actions-buy:hover{
+    background-color: #0b0b0b;
+}
+.description{
+    font-size: 0.875rem;    
+}

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Products } from '../../interface/products.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-produts',
@@ -8,15 +9,21 @@ import { Products } from '../../interface/products.interface';
 })
 export class CardProdutsComponent {
   @Input() products!: Products;
-  randomNumber: number = 0;
+
+  private rouer = inject(Router);
 
   truncateString(text: string | undefined, maxLength: number): string {
-
     //valida si el texto es undefined o null y retorna un string vacio
     if (!text) return '';
     //valida si el texto es menor o igual al maxLength y retorna el texto
     if (text.length <= maxLength) return text;
     //retorna el texto truncado con los puntos suspensivos
     return text.substring(0, maxLength) + '...';
+  }
+  showDetails() {
+    this.rouer.navigateByUrl('/fakestore/details/products')
+  }
+  addCart() {
+    console.log('Agregar al carrito');
   }
 }

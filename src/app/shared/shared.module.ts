@@ -13,6 +13,6 @@ import { SharedWishlistComponent } from './components/shared-wishlist/shared-wis
 @NgModule({
     declarations: [HeaderComponent, FooterComponent, SharedCartComponent, ModalComponent, SharedSearchComponent, SharedWishlistComponent],
     imports: [CommonModule, HttpClientModule, RouterModule, LoginModule],
-    exports: [HeaderComponent, FooterComponent],
+    exports: [HeaderComponent, FooterComponent, SharedSearchComponent],
 })
 export class SharedModule { }
