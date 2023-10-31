@@ -1,7 +1,7 @@
 <article>
     <div class="card__product">
         <a (click)="showDetails()">
-            <img src="{{products.images}}" alt="" class="card__product--img">
+            <img [src]="products | productsImage" alt="" class="card__product--img">
             <div class="card__info">
                 <h3 class="card__info--title"> {{products.title}}</h3>
                 <p class="card__info--description">{{truncateString(products.description, 50)}}</p>

@@ -1,1 +1,27 @@
-<p class="section container">signup works!</p>
+<main class="main">
+    <section class="sign__up section">
+        <div class="sign__up--container container grid">
+            <div class="sign__up--content">
+                <h2 class="sign__up--title">Create una cuenta.</h2>
+                <form class="sign-up-form" autocomplete="off">
+                    <div class="sign-up-wrap">
+                        <input type="text" name="email" id="email" class="sign-up-input" placeholder=" ">
+                        <label for="email" class="sign-up-label">Correo electronico</label>
+                    </div>
+                    <div class="sign-up-wrap">
+                        <input type="text" name="email" id="email" class="sign-up-input" placeholder=" ">
+                        <label for="email" class="sign-up-label">DNI</label>
+                    </div>
+                    <div class="sign-up-wrap">
+                        <input type="password" name="dni" id="dni" class="sign-up-input" placeholder=" ">
+                        <label for="dni" class="sign-up-label">Contraseña</label>
+                    </div>
+                    <div class="sign-up-buton">
+                        <button type="submit" class="sign-up-submit">Crear Cuenta</button>
+                    </div>
+                    <p class="sign-up-text">¿Ya tienes una cuenta?. <a (click)="toogleModal()" >Inicia sesión</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>

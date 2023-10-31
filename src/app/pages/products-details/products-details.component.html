@@ -18,9 +18,13 @@
                 </div>
                 <h4 class="quantity__title">Cantidad</h4>
                 <div class="quantity add-quantity">
-                    <img src="../../../assets/icon/minus.svg" alt="minus" class="icon-quantity">
-                    <input type="text" placeholder="1" class="quantity__input">
-                    <img src="../../../assets/icon/plus.svg" alt="plus" class="icon-quantity">
+                    <button type="button" class="quantity--actions">
+                        <img src="../../../assets/icon/minus.svg" alt="minus" class="icon-quantity">
+                    </button>
+                    <input type="number" placeholder="1" class="quantity__input" min="1" max="10">
+                    <button type="button" class="quantity--actions">
+                        <img src="../../../assets/icon/plus.svg" alt="minus" class="icon-quantity">
+                    </button>
                 </div>
                 <div class="actions">
                     <a class="actions-buy">Comprar ahora</a>

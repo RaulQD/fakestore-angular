@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" [ngClass]="scrolled ? 'scrolled' : ''">
     <nav class="nav container">
         <div class="nav__logo">
             <a [routerLink]="['/fakestore/home']" class="nav__logo--content">
