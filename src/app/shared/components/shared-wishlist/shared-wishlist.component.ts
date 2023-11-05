@@ -9,7 +9,7 @@ import { SharedService } from '../../service/shared.service';
 })
 export class SharedWishlistComponent implements OnInit, OnDestroy{
   showWishList!: boolean;
-  subscription!: Subscription;
+  subscription?: Subscription;
   showDropdown!: boolean;
 
   private sharedService = inject(SharedService);
@@ -20,7 +20,7 @@ export class SharedWishlistComponent implements OnInit, OnDestroy{
     });
   }
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscription?.unsubscribe();
   }
   toogleWishlist() {
     this.sharedService.setShowWishlist(false);

@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ProductsService } from '../../service/products.service';
+import { ProductsService } from '../../../service/products.service';
 import { Products } from '../../interface/products.interface';
 
 @Component({
@@ -7,12 +7,12 @@ import { Products } from '../../interface/products.interface';
   templateUrl: './list-products.component.html',
   styleUrls: ['./list-products.component.css']
 })
-export class ListProductsComponent implements OnInit{
+export class ListProductsComponent implements OnInit {
 
   public productsList: Products[] = [];
-  
+
   visibilityProductsCount: number = 12;
-  startWith: number = 0;  
+  startWith: number = 0;
   isLoading: boolean = false;
 
   ngOnInit(): void {

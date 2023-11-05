@@ -21,7 +21,7 @@ export class CardProdutsComponent {
     return text.substring(0, maxLength) + '...';
   }
   showDetails() {
-    this.rouer.navigateByUrl('/fakestore/details/products')
+    this.rouer.navigateByUrl(`/fakestore/details/products/${this.products.id}`)
   }
   addCart() {
     console.log('Agregar al carrito');
