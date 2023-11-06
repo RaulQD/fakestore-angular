@@ -4,15 +4,14 @@ export interface Products {
     price:       number;
     description: string;
     images:      string[];
-    creationAt:  Date;
-    updatedAt:   Date;
-    category:    Category;
+    category: Category;
+}
+export interface ItemsCart extends Products {
+    quantity: number;
 }
 
 export interface Category {
     id:         number;
     name:       string;
     image:      string;
-    creationAt: Date;
-    updatedAt:  Date;
 }

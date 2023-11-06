@@ -1,4 +1,4 @@
-<header class="header" [ngClass]="scrolled ? 'scrolled' : ''">
+<header class="header" [ngClass]="  scrolled ? 'scrolled' : ''">
     <nav class="nav container">
         <div class="nav__logo">
             <a [routerLink]="['/fakestore/home']" class="nav__logo--content">
@@ -82,7 +82,7 @@
                             alt="cart"
                             class="nav__icons"
                         />
-                        <p class="button-item__badge">0</p>
+                        <p class="button-item__badge" >{{totalItems}}</p>
                     </button>
                     <app-shared-cart></app-shared-cart>
                 </li>

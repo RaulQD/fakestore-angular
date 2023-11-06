@@ -12,19 +12,15 @@
                 </button>
             </div>
             <div class="cart__body">
-                <div class="cart__body--content">
+                <div class="cart__body--content" *ngFor="let products of cartItems">
                     <div class="cart__body--item">
-                        <img
-                            src="../../../../assets/img/casaca1.png"
-                            alt="casaca1"
-                            class="cart__body--img"
-                        />
+                        <img [src]="products.images[0]" [alt]="products.title" class="cart__body--img"/>
                     </div>
                     <div class="cart__body--info">
                         <div class="cart__body--info__content">
                             <div class="cart__body--title">
-                                <h3>Sopa Everyday mask</h3>
-                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                                <h3>{{products.title}}</h3>
+                                <span class="cart__price--text">{{ products.price | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
                             </div>
                             <div class="cart__body--color">
                                 <p>Color : <span>Negro</span></p>
@@ -33,15 +29,15 @@
                         </div>
                         <div class="cart__quantity">
                             <div class="cart__quantity--content">
-                                <button class="cart__quantity--btn">
+                                <button type="button" class="cart__quantity--btn" (click)="onRemoveQuantity(products)">
                                     <img
                                         src="../../../../assets/icon/minus.svg"
                                         alt="minus"
                                         class="cart__quantity--icon"
                                     />
                                 </button>
-                                <p class="cart__quantity--text">1</p>
-                                <button class="cart__quantity--btn">
+                                <p class="cart__quantity--text">{{products.quantity}}</p>
+                                <button type="button" class="cart__quantity--btn" (click)="onAddQuantity(products)">
                                     <img
                                         src="../../../../assets/icon/plus.svg"
                                         alt="plus"
@@ -49,60 +45,13 @@
                                     />
                                 </button>
                             </div>
-                            <div class="cart__quantity--delete">
+                            <button type="button "class="cart__quantity--delete" (click)="removeCartItems(products)">
                                 <img
                                     src="../../../../assets/icon/trash-2.svg"
                                     alt="trash"
                                     class="cart__quantity--icon"
                                 />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cart__body--content">
-                    <div class="cart__body--item">
-                        <img
-                            src="../../../../assets/img/casaca1.png"
-                            alt="casaca1"
-                            class="cart__body--img"
-                        />
-                    </div>
-                    <div class="cart__body--info">
-                        <div class="cart__body--info__content">
-                            <div class="cart__body--title">
-                                <h3>Sopa Everyday mask</h3>
-                                <span class="cart__price--text">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
-                            </div>
-                            <div class="cart__body--color">
-                                <p>Color : <span>Negro</span></p>
-                                <p>Tamaño: <span>Extra Large</span></p>
-                            </div>
-                        </div>
-                        <div class="cart__quantity">
-                            <div class="cart__quantity--content">
-                                <button class="cart__quantity--btn">
-                                    <img
-                                        src="../../../../assets/icon/minus.svg"
-                                        alt="minus"
-                                        class="cart__quantity--icon"
-                                    />
-                                </button>
-                                <p class="cart__quantity--text">1</p>
-                                <button class="cart__quantity--btn">
-                                    <img
-                                        src="../../../../assets/icon/plus.svg"
-                                        alt="plus"
-                                        class="cart__quantity--icon"
-                                    />
-                                </button>
-                            </div>
-                            <div class="cart__quantity--delete">
-                                <img
-                                    src="../../../../assets/icon/trash-2.svg"
-                                    alt="trash"
-                                    class="cart__quantity--icon"
-                                />
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -117,7 +66,7 @@
                     </div>
                     <div class="cart__total--content">
                         <p class="cart__total--text">Total</p>
-                        <span class="cart__total--price">{{0.00 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                        <span class="cart__total--price">{{getTotal(cartItems) | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
                     </div>
                 </div>
             </div>

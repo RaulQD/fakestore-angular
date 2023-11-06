@@ -1,6 +1,7 @@
 import { Component, Input, inject } from '@angular/core';
-import { Products } from '../../interface/products.interface';
+import { ItemsCart, Products } from '../../interface/products.interface';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/shared/service/cart.service';
 
 @Component({
   selector: 'app-card-produts',
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
 export class CardProdutsComponent {
   @Input() products!: Products;
 
-  private rouer = inject(Router);
+  private router = inject(Router);
+  private cartService = inject(CartService);
 
   truncateString(text: string | undefined, maxLength: number): string {
     //valida si el texto es undefined o null y retorna un string vacio
@@ -21,9 +23,13 @@ export class CardProdutsComponent {
     return text.substring(0, maxLength) + '...';
   }
   showDetails() {
-    this.rouer.navigateByUrl(`/fakestore/details/products/${this.products.id}`)
+    this.router.navigateByUrl(`/fakestore/details/products/${this.products.id}`)
   }
-  addCart() {
-    console.log('Agregar al carrito');
+  onAddToCart() {
+    const product = {
+      ...this.products,
+      quantity: 1
+    }
+    this.cartService.addToCart(product);
   }
 }

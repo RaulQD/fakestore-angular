@@ -158,6 +158,7 @@
     font-size: 12px
 }
 .cart__quantity--delete {
+    background-color: transparent;
     border: 1px solid #75869c;
     border-radius: 50%;
     display: flex;

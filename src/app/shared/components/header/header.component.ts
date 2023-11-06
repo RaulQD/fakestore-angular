@@ -1,18 +1,24 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, DoCheck, HostListener, inject } from '@angular/core';
 import { SharedService } from '../../service/shared.service';
 import { ModalService } from '../../service/modal.service';
+import { CartService } from '../../service/cart.service';
+import { ItemsCart } from 'src/app/pages/products/interface/products.interface';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements DoCheck {
+
     scrolled = false;
     showDropDown = false;
-    
+    totalItems: number = 0;
+    dataSource: ItemsCart[] = [];
     private sharedService = inject(SharedService);
     private modalService = inject(ModalService);
+    private cartService = inject(CartService);
+
 
     @HostListener('window:scroll', ['$event'])
     onScroll(): void {
@@ -21,6 +27,14 @@ export class HeaderComponent {
         } else {
             this.scrolled = false;
         }
+    }
+    ngDoCheck(): void {
+        this.totalItemsCart();
+    }
+    totalItemsCart() {
+        this.cartService.getProductsInCart().subscribe((items: ItemsCart[]) => {
+            this.totalItems = Object.values(items).length;
+        });
     }
     //TOOGLE CART
     toogleCart() {
