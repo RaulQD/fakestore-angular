@@ -9,11 +9,13 @@ import { ModalComponent } from './components/modal/modal.component';
 import { LoginModule } from '../pages/auth/pages/login/login.module';
 import { SharedSearchComponent } from './components/shared-search/shared-search.component';
 import { SharedWishlistComponent } from './components/shared-wishlist/shared-wishlist.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+
 
 
 @NgModule({
-    declarations: [HeaderComponent, FooterComponent, SharedCartComponent, ModalComponent, SharedSearchComponent, SharedWishlistComponent],
+    declarations: [HeaderComponent, FooterComponent, SharedCartComponent, ModalComponent, SharedSearchComponent, SharedWishlistComponent, NotificationsComponent],
     imports: [CommonModule, HttpClientModule, RouterModule, LoginModule],
-    exports: [HeaderComponent, FooterComponent, SharedSearchComponent],
+    exports: [HeaderComponent, FooterComponent, SharedSearchComponent, NotificationsComponent],
 })
 export class SharedModule { }

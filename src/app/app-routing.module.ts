@@ -12,6 +12,10 @@ const routes: Routes = [
         loadChildren: () => import('./pages/auth/auth.module').then((m) => m.AuthModule),
     },
     {
+        path: 'checkout',
+        loadChildren: () => import('./pages/checkout/checkout.module').then((m) => m.CheckoutModule),
+    },
+    {
         path: '**',
         redirectTo: 'fakestore',
     },
@@ -21,4 +25,4 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

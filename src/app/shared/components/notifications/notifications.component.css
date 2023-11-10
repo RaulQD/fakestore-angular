@@ -1,0 +1,43 @@
+.toast{
+    position: fixed;
+    bottom:-100%;
+    right: 50%;
+    transform: translateX(50%);
+    /* z-index: 9999; */
+    width: 300px;
+    margin: 10px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: bottom 0.3s;
+}
+.show-toast{
+    bottom: 20px;
+}
+.toast-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    padding:20px 10px;
+}
+
+.toast-message{
+    color:#6f6f6f;
+    font-size: 14px;
+}
+.success{
+    border-left: 6px solid #01727F;
+}
+.delete{
+    border-left: 6px solid #e11d1d;
+}
+.icon-success{
+    font-size: 22px;
+    color:#01727F;
+}
+.icon-delete{
+    font-size: 22px;
+    color:#e11d1d;
+}

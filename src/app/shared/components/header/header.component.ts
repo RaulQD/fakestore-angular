@@ -1,7 +1,7 @@
 import { Component, DoCheck, HostListener, inject } from '@angular/core';
 import { SharedService } from '../../service/shared.service';
 import { ModalService } from '../../service/modal.service';
-import { CartService } from '../../service/cart.service';
+import { StoreService } from '../../service/store.service';
 import { ItemsCart } from 'src/app/pages/products/interface/products.interface';
 
 @Component({
@@ -17,7 +17,7 @@ export class HeaderComponent implements DoCheck {
     dataSource: ItemsCart[] = [];
     private sharedService = inject(SharedService);
     private modalService = inject(ModalService);
-    private cartService = inject(CartService);
+    private storeService = inject(StoreService);
 
 
     @HostListener('window:scroll', ['$event'])
@@ -28,11 +28,12 @@ export class HeaderComponent implements DoCheck {
             this.scrolled = false;
         }
     }
+
     ngDoCheck(): void {
         this.totalItemsCart();
     }
     totalItemsCart() {
-        this.cartService.getProductsInCart().subscribe((items: ItemsCart[]) => {
+        this.storeService.shoppingCart$.subscribe((items: ItemsCart[]) => {
             this.totalItems = Object.values(items).length;
         });
     }

@@ -7,16 +7,16 @@
                 <p class="card__info--description">{{truncateString(products.description, 50)}}</p>
                 <div class="card__price">
                     <p class="card__price--text">{{products.price | currency:'S/.&nbsp;':'symbol-narrow'}}</p>
-                    <p class="card__price--discount">{{ 435 | currency:'S/.&nbsp;':'symbol-narrow'}}</p>
+                    <p class="card__price--discount">{{ products.price + 90 | currency:'S/.&nbsp;':'symbol-narrow'}}</p>
                 </div>
             </div>
         </a>
         
         <div class="card__action">
             <button type="button" class="add__button--cart" (click)="onAddToCart()">Agregar al carrito</button>
-            <button type="button" class="add--button--wishlist">
+            <!-- <button type="button" class="add--button--wishlist">
                 <img src="../../../../../assets/icon/heart.svg" alt="heart" class="add-wishlist">
-            </button>
+            </button> -->
         </div>
     </div>
 </article>

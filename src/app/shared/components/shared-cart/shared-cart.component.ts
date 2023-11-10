@@ -1,7 +1,7 @@
 import { Component, DoCheck, OnDestroy, OnInit, inject } from '@angular/core';
 import { SharedService } from '../../service/shared.service';
 import { Subscription } from 'rxjs';
-import { CartService } from '../../service/cart.service';
+import {  StoreService } from '../../service/store.service';
 import { ItemsCart } from 'src/app/pages/products/interface/products.interface';
 
 @Component({
@@ -15,7 +15,7 @@ export class SharedCartComponent implements OnInit, OnDestroy {
     subscription!: Subscription;
     cartItems: ItemsCart[] = [];
     private sharedService = inject(SharedService);
-    private cartService = inject(CartService);
+    private storeService = inject(StoreService);
 
     ngOnDestroy(): void {
         this.subscription.unsubscribe();
@@ -26,27 +26,26 @@ export class SharedCartComponent implements OnInit, OnDestroy {
             console.log(value);
         });
         this.getCartItems();
-        this.cartService.loadLocalStorage();
     }
 
     getCartItems() {
-        this.cartService.getProductsInCart().subscribe((items) => {
+        this.storeService.shoppingCart$.subscribe((items: ItemsCart[]) => {
             this.cartItems = Object.values(items);
-        })
+        });
     }
     removeCartItems(cartItems: ItemsCart) {
-        this.cartService.removeCartItems(cartItems);
+        this.storeService.removeCartItems(cartItems);
 
     }
     getTotal(items: ItemsCart[]): number {
-        return this.cartService.getTotal(items);
+        return this.storeService.getTotal(items);
     }
 
     onAddQuantity(item: ItemsCart) {
-        this.cartService.addToCart(item);
+        this.storeService.addToCart(item);
     }
     onRemoveQuantity(item: ItemsCart) {
-        this.cartService.removeQuantity(item);
+        this.storeService.removeQuantity(item);
     }
 
     toogleCart() {

@@ -53,3 +53,12 @@ h4 {
     display: grid;
     gap: 1.5rem;
 }
+.custom-popup-title-class{
+    font-size: 0.875rem !important;
+    font-weight: 500;
+    /* color: #000; */
+}
+.custom-popup-icon-class{
+    font-size: 0.75rem !important;
+    /* color: #000 !important; */
+}

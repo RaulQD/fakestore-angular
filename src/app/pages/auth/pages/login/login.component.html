@@ -1,26 +1,15 @@
 <div class="login">
     <div class="login__container">
         <h3 class="login__title">Inicia Sesión</h3>
-        <form class="form" autocomplete="off">
+        <form class="form"  (ngSubmit)="login()" [formGroup]="form">
             <div class="form__container">
                 <div class="form__box">
                     <label for="email" class="form__label">Correo Electronico</label>
-                    <input
-                        type="text"
-                        class="form__input"
-                        id="email"
-                        name="email"
-                        placeholder="Ingresa tú correo electronico"
-                    />
+                    <input type="email" class="form__input" id="email" formControlName="email" placeholder="Ingresa tú correo electronico" autocomplete="off"/>
                 </div>
                 <div class="form__box">
                     <label for="password" class="form__label">Contraseña</label>
-                    <input
-                        type="text"
-                        id="password"
-                        name="password"
-                        class="form__input"
-                        placeholder="Ingresa tú contraseña"
+                    <input type="password" id="password" formControlName="password" class="form__input" placeholder="Ingresa tú contraseña" autocomplete="off"
                     />
                 </div>
             </div>

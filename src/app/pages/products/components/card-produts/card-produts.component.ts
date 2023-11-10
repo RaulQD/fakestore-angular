@@ -1,7 +1,7 @@
 import { Component, Input, inject } from '@angular/core';
 import { ItemsCart, Products } from '../../interface/products.interface';
 import { Router } from '@angular/router';
-import { CartService } from 'src/app/shared/service/cart.service';
+import { StoreService} from 'src/app/shared/service/store.service';
 
 @Component({
   selector: 'app-card-produts',
@@ -12,7 +12,7 @@ export class CardProdutsComponent {
   @Input() products!: Products;
 
   private router = inject(Router);
-  private cartService = inject(CartService);
+  private storeService = inject(StoreService);
 
   truncateString(text: string | undefined, maxLength: number): string {
     //valida si el texto es undefined o null y retorna un string vacio
@@ -30,6 +30,7 @@ export class CardProdutsComponent {
       ...this.products,
       quantity: 1
     }
-    this.cartService.addToCart(product);
+
+    this.storeService.addToCart(product);
   }
 }

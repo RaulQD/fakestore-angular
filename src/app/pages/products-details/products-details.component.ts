@@ -3,7 +3,7 @@ import { Products } from '../products/interface/products.interface';
 import { ProductsService } from '../service/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
-import { CartService } from 'src/app/shared/service/cart.service';
+import { StoreService } from 'src/app/shared/service/store.service';
 
 @Component({
     selector: 'app-products-details',
@@ -25,7 +25,7 @@ export class ProductsDetailsComponent implements OnInit {
         }
     }
     private productService = inject(ProductsService);
-    private cartServicec = inject(CartService);
+    private storeService = inject(StoreService);
     private activeRouted = inject(ActivatedRoute);
     private router = inject(Router);
 
@@ -44,6 +44,6 @@ export class ProductsDetailsComponent implements OnInit {
             ...this.products,
             quantity: 1
         }
-        this.cartServicec.addToCart(product);
+        this.storeService.addToCart(product);
     }
 }

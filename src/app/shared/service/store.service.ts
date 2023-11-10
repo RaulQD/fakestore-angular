@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ItemsCart } from 'src/app/pages/products/interface/products.interface';
+import Swal from 'sweetalert2';
 
 
 @Injectable({
     providedIn: 'root'
 })
-export class CartService {
+export class StoreService {
 
     private _cartItems: ItemsCart[] = [];
 
     private shoppingCart = new BehaviorSubject<ItemsCart[]>([]);
-
-    getProductsInCart() {
-        return this.shoppingCart.asObservable();
-    }
+    shoppingCart$ = this.shoppingCart.asObservable();
 
     addToCart(cartItem: ItemsCart): void {
         //Crea una copia del carrito de compras para evitar modificar el original
@@ -30,13 +28,33 @@ export class CartService {
         //actualiza el carrito de compras
         this._cartItems = [...items];
         //envia el carrito de compras actualizado
-        this.shoppingCart.next({ ...items });
+        this.shoppingCart.next(items);
         console.log(this._cartItems);
+        //message
+        Swal.mixin({
+            toast: true,
+            position: 'bottom',
+            showConfirmButton: false,
+            width: '21.875rem',
+            timer: 3000,
+            timerProgressBar: true,
+            customClass: {
+                title: 'custom-popup-title-class',
+                icon: 'custom-popup-icon-class',
+            },
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        }).fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito'
+        });
         this.saveLocalStorage();
     }
     getTotal(items: ItemsCart[]) {
         //retorna el total de la suma de los precios de los items
-        return items.map((item) => item.price * item.quantity).reduce((acc, item) => acc + item, 0);
+        return items.map((item) => item.price * item.quantity).reduce((prev, current) => prev + current, 0);
     }
     removeCartItems(cartItem: ItemsCart) {
         //filtra los items que no coincidan con el id del item a eliminar
@@ -44,14 +62,36 @@ export class CartService {
         //actualiza el carrito de compras
         this.shoppingCart.next({ ...filterItems });
         console.log('item eliminado', filterItems)
+        //message
+        Swal.mixin({
+            toast: true,
+            position: 'bottom',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            customClass: {
+                title: 'custom-popup-title-class',
+                icon: 'custom-popup-icon-class',
+            },
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            },
+        }).fire({
+            icon: 'error',
+            title: 'Producto eliminado del carrito'
+        });
         //retorna el carrito de compras actualizado
         return this._cartItems = [...filterItems];
     }
     removeAllCartItems(): void {
+        //resetea el carrito de compras
         this._cartItems = [];
+        //envia el carrito de compras actualizado
         this.shoppingCart.next({ ...this._cartItems });
     }
     removeQuantity(item: ItemsCart): void {
+        //itera sobre cada item del array _cartItems y comprueba si el id del item coincide con el id del parametro item
         this._cartItems.map((cartItem) => {
             if (cartItem.id === item.id) {
                 cartItem.quantity--;
@@ -60,6 +100,9 @@ export class CartService {
                 }
             }
         })
+        //envia el carrito de compras actualizado
+        this.shoppingCart.next({ ...this._cartItems });
+        console.log('item eliminado', this._cartItems);
     }
     //lOCAL STORAGE
     saveLocalStorage(): void {

@@ -10,7 +10,6 @@ import { environments } from 'src/environments/environments';
 export class ProductsService {
 
   private apiUrl: string = environments.API_URL;
-  url: string = 'https://api.escuelajs.co/api/v1'
   constructor(private http: HttpClient) { }
 
   getAllProducts(): Observable<Products[]> {

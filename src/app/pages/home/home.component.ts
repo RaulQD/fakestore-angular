@@ -1,15 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ImageCardCategory } from 'src/app/interface/categoryImage.interface';
-import { SharedService } from 'src/app/shared/service/shared.service';
+
+
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
+export class HomeComponent{
 
-    private sharedService = inject(SharedService);
 
     imageCategory: ImageCardCategory[] = [
         {
@@ -31,4 +31,5 @@ export class HomeComponent {
             text: 'Colleción de invierno 2023',
         },
     ];
+
 }
