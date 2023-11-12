@@ -1,7 +1,8 @@
 import { Component, Input, inject } from '@angular/core';
 import { ItemsCart, Products } from '../../interface/products.interface';
 import { Router } from '@angular/router';
-import { StoreService} from 'src/app/shared/service/store.service';
+import { StoreService } from 'src/app/pages/service/store.service';
+
 
 @Component({
   selector: 'app-card-produts',

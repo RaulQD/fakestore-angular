@@ -1,8 +1,10 @@
 import { Component, DoCheck, OnDestroy, OnInit, inject } from '@angular/core';
-import { SharedService } from '../../service/shared.service';
+
 import { Subscription } from 'rxjs';
-import {  StoreService } from '../../service/store.service';
+
 import { ItemsCart } from 'src/app/pages/products/interface/products.interface';
+import { SharedService } from 'src/app/pages/service/shared.service';
+import { StoreService } from 'src/app/pages/service/store.service';
 
 @Component({
     selector: 'app-shared-cart',
@@ -23,7 +25,6 @@ export class SharedCartComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.subscription = this.sharedService.getShowCart().subscribe((value: boolean) => {
             this.showCart = value;
-            console.log(value);
         });
         this.getCartItems();
     }

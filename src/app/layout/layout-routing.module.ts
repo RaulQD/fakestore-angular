@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 
+
 const routes: Routes = [
     {
         path: '',
@@ -12,6 +13,7 @@ const routes: Routes = [
                 redirectTo: 'home',
                 pathMatch: 'full',
             },
+
             {
                 path: 'home',
                 loadChildren: () => import('../pages/home/home.module').then((m) => m.HomeModule),
@@ -27,24 +29,19 @@ const routes: Routes = [
                     import('../pages/about/about.module').then((m) => m.AboutModule),
             },
             {
-                path: 'myaccount/registration',
-                loadChildren: () =>
-                    import('../pages/auth/pages/signup/signup.module').then((m) => m.SignupModule),
-            },
-            {
                 path: 'details',
                 loadChildren: () =>
                     import('../pages/products-details/products-details.module').then(
                         (m) => m.ProductsDetailsModule
                     ),
             },
-            {
-                path: 'checkout/information',
-                loadChildren: () =>
-                    import('../pages/checkout/pages/checkout-info/checkout-info.module').then(
-                        (m) => m.CheckoutInfoModule
-                    ),
-            },
+            // {
+            //     path: 'checkout',
+            //     loadChildren: () =>
+            //         import('../pages/checkout/pages/checkout-info/checkout-info.module').then(
+            //             (m) => m.CheckoutInfoModule
+            //         ),
+            // },
         ],
     },
 ];
@@ -53,4 +50,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class LayoutRoutingModule {}
+export class LayoutRoutingModule { }

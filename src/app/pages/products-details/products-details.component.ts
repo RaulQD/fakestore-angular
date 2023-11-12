@@ -1,9 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Products } from '../products/interface/products.interface';
-import { ProductsService } from '../service/products.service';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
-import { StoreService } from 'src/app/shared/service/store.service';
+import { StoreService } from '../service/store.service';
+import { ProductsService } from '../service/products.service';
+
 
 @Component({
     selector: 'app-products-details',

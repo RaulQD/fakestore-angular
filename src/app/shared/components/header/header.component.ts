@@ -1,8 +1,9 @@
-import { Component, DoCheck, HostListener, inject } from '@angular/core';
-import { SharedService } from '../../service/shared.service';
-import { ModalService } from '../../service/modal.service';
-import { StoreService } from '../../service/store.service';
+import { Component, DoCheck, HostListener, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ItemsCart } from 'src/app/pages/products/interface/products.interface';
+import { SharedService } from 'src/app/pages/service/shared.service';
+import { StoreService } from 'src/app/pages/service/store.service';
 
 @Component({
     selector: 'app-header',
@@ -10,14 +11,15 @@ import { ItemsCart } from 'src/app/pages/products/interface/products.interface';
     styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements DoCheck {
-
+   
     scrolled = false;
     showDropDown = false;
     totalItems: number = 0;
+    suscription!: Subscription;
     dataSource: ItemsCart[] = [];
     private sharedService = inject(SharedService);
-    private modalService = inject(ModalService);
     private storeService = inject(StoreService);
+
 
 
     @HostListener('window:scroll', ['$event'])
@@ -29,6 +31,7 @@ export class HeaderComponent implements DoCheck {
         }
     }
 
+
     ngDoCheck(): void {
         this.totalItemsCart();
     }
@@ -37,14 +40,10 @@ export class HeaderComponent implements DoCheck {
             this.totalItems = Object.values(items).length;
         });
     }
+  
     //TOOGLE CART
     toogleCart() {
         this.sharedService.setShowCart(true);
-    }
-    //TOOGLE WISHLIST
-    toogleWishlist() {
-        this.sharedService.setShowWishlist(true);
-        console.log('toogleWishlist');
     }
     //TOOGLE DROPDOWN
     toogleDropdown() {
@@ -55,7 +54,6 @@ export class HeaderComponent implements DoCheck {
     }
     //modal
     toogleModal() {
-        this.modalService.setShowModal(true);
         //CERRAR EL MENU DESPLEGABLE
         this.showDropDown = false;
     }

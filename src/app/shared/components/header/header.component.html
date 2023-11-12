@@ -51,12 +51,12 @@
                     </button>
                     <ul class="dropdown__menu" [ngClass]="showDropDown ? 'dropdown__active' : ''">
                         <li class="dropdown__item">
-                            <button 
+                            <a [routerLink]="['/fakestore/myaccount/login']"
                                 class="dropdown__menu--item dropdown__button--item"
-                                (click)="toogleModal()"
+                                (click)="closeDropdown()"
                                 >
                                 Inicia Sesión
-                        </button>
+                            </a>
                         </li>
                         <li clasS="dropdown__item">
                             <a

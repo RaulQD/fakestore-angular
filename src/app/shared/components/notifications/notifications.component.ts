@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
-import { NotifyService } from '../../service/notify.service';
+
 import { Subscription } from 'rxjs';
+import { NotifyService } from 'src/app/pages/service/notify.service';
 
 @Component({
   selector: 'app-notifications',
@@ -9,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class NotificationsComponent implements OnInit, OnDestroy {
   showSuccess = false;
-  showError= false; 
+  showError = false;
   subscription!: Subscription;
   successMessage: string = '';
   deleteMessage: string = '';
@@ -21,11 +22,11 @@ export class NotificationsComponent implements OnInit, OnDestroy {
   }
   ngOnInit(): void {
     this.getSuccessMessage();
-   
+
     this.getDeleteMessage();
   }
 
-  getSuccessMessage() { 
+  getSuccessMessage() {
     this.showSuccess = false;
     this.subscription = this.notifyService.successMessage$.subscribe((message: string) => {
       this.successMessage = message;

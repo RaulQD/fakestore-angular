@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
-import { ModalService } from '../../service/modal.service';
+
 import { Subscription } from 'rxjs';
+import { ModalService } from 'src/app/pages/service/modal.service';
 
 @Component({
     selector: 'app-modal',
@@ -22,6 +23,6 @@ export class ModalComponent implements OnInit, OnDestroy {
     }
     closeModal() {
         this.modalService.setShowModal(false);
-        
+
     }
 }

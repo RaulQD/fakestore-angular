@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { SharedCartComponent } from './components/shared-cart/shared-cart.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { LoginModule } from '../pages/auth/pages/login/login.module';
 import { SharedSearchComponent } from './components/shared-search/shared-search.component';
 import { SharedWishlistComponent } from './components/shared-wishlist/shared-wishlist.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
@@ -15,7 +14,7 @@ import { NotificationsComponent } from './components/notifications/notifications
 
 @NgModule({
     declarations: [HeaderComponent, FooterComponent, SharedCartComponent, ModalComponent, SharedSearchComponent, SharedWishlistComponent, NotificationsComponent],
-    imports: [CommonModule, HttpClientModule, RouterModule, LoginModule],
+    imports: [CommonModule, HttpClientModule, RouterModule],
     exports: [HeaderComponent, FooterComponent, SharedSearchComponent, NotificationsComponent],
 })
 export class SharedModule { }

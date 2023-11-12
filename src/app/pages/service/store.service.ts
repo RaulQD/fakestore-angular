@@ -11,8 +11,8 @@ export class StoreService {
 
     private _cartItems: ItemsCart[] = [];
 
-    private shoppingCart = new BehaviorSubject<ItemsCart[]>([]);
-    shoppingCart$ = this.shoppingCart.asObservable();
+    private _shoppingCart = new BehaviorSubject<ItemsCart[]>([]);
+    shoppingCart$ = this._shoppingCart.asObservable();
 
     addToCart(cartItem: ItemsCart): void {
         //Crea una copia del carrito de compras para evitar modificar el original
@@ -28,7 +28,7 @@ export class StoreService {
         //actualiza el carrito de compras
         this._cartItems = [...items];
         //envia el carrito de compras actualizado
-        this.shoppingCart.next(items);
+        this._shoppingCart.next(items);
         console.log(this._cartItems);
         //message
         Swal.mixin({
@@ -60,7 +60,7 @@ export class StoreService {
         //filtra los items que no coincidan con el id del item a eliminar
         const filterItems = this._cartItems.filter((item) => item.id !== cartItem.id);
         //actualiza el carrito de compras
-        this.shoppingCart.next({ ...filterItems });
+        this._shoppingCart.next({ ...filterItems });
         console.log('item eliminado', filterItems)
         //message
         Swal.mixin({
@@ -88,7 +88,7 @@ export class StoreService {
         //resetea el carrito de compras
         this._cartItems = [];
         //envia el carrito de compras actualizado
-        this.shoppingCart.next({ ...this._cartItems });
+        this._shoppingCart.next({ ...this._cartItems });
     }
     removeQuantity(item: ItemsCart): void {
         //itera sobre cada item del array _cartItems y comprueba si el id del item coincide con el id del parametro item
@@ -101,7 +101,7 @@ export class StoreService {
             }
         })
         //envia el carrito de compras actualizado
-        this.shoppingCart.next({ ...this._cartItems });
+        this._shoppingCart.next({ ...this._cartItems });
         console.log('item eliminado', this._cartItems);
     }
     //lOCAL STORAGE

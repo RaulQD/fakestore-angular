@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ProductsService } from '../../../service/products.service';
+
 import { Products } from '../../interface/products.interface';
+import { ProductsService } from 'src/app/pages/service/products.service';
 
 @Component({
   selector: 'app-list-products',
@@ -14,23 +15,19 @@ export class ListProductsComponent implements OnInit {
   visibilityProductsCount: number = 12;
   startWith: number = 0;
   isLoading: boolean = false;
-
-  ngOnInit(): void {
-    this.getProducts();
-  }
   private productsService = inject(ProductsService);
 
-  getProducts() {
+  ngOnInit(): void {
     this.productsService.getAllProducts().subscribe((products) => {
       this.productsList = products;
-      console.log(products);
     })
   }
+
   loadProducts() {
     this.isLoading = true;
     setTimeout(() => {
       this.visibilityProductsCount += 15;
       this.isLoading = false;
-    }, 2000);
+    }, 1000);
   }
 }
