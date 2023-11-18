@@ -16,6 +16,7 @@ export class SharedCartComponent implements OnInit, OnDestroy {
     showCart!: boolean;
     subscription!: Subscription;
     cartItems: ItemsCart[] = [];
+    totalItems: number = 0;
     private sharedService = inject(SharedService);
     private storeService = inject(StoreService);
 
@@ -27,6 +28,9 @@ export class SharedCartComponent implements OnInit, OnDestroy {
             this.showCart = value;
         });
         this.getCartItems();
+        this.storeService.shoppingCart$.subscribe((items: ItemsCart[]) => {
+            this.totalItems = this.storeService.getTotal();
+         });
     }
 
     getCartItems() {
@@ -38,8 +42,10 @@ export class SharedCartComponent implements OnInit, OnDestroy {
         this.storeService.removeCartItems(cartItems);
 
     }
-    getTotal(items: ItemsCart[]): number {
-        return this.storeService.getTotal(items);
+    getTotal(): number {
+        this.totalItems = this.storeService.getTotal();
+        console.log(this.totalItems);
+        return this.totalItems;
     }
 
     onAddQuantity(item: ItemsCart) {

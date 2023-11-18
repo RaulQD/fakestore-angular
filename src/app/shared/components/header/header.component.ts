@@ -1,5 +1,4 @@
-import { Component, DoCheck, HostListener, OnInit, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, HostListener, OnDestroy, OnInit, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ItemsCart } from 'src/app/pages/products/interface/products.interface';
 import { SharedService } from 'src/app/pages/service/shared.service';
@@ -10,8 +9,8 @@ import { StoreService } from 'src/app/pages/service/store.service';
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent implements DoCheck {
-   
+export class HeaderComponent implements OnInit, OnDestroy {
+
     scrolled = false;
     showDropDown = false;
     totalItems: number = 0;
@@ -31,16 +30,15 @@ export class HeaderComponent implements DoCheck {
         }
     }
 
-
-    ngDoCheck(): void {
-        this.totalItemsCart();
+    ngOnDestroy(): void {
+        this.suscription.unsubscribe();
     }
-    totalItemsCart() {
-        this.storeService.shoppingCart$.subscribe((items: ItemsCart[]) => {
+    ngOnInit(): void {
+        //OBTENER EL TOTAL DE ITEMS DEL CARRITO
+        this.suscription = this.storeService.shoppingCart$.subscribe((items: ItemsCart[]) => {
             this.totalItems = Object.values(items).length;
         });
     }
-  
     //TOOGLE CART
     toogleCart() {
         this.sharedService.setShowCart(true);

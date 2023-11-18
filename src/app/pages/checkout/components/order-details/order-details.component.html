@@ -36,17 +36,17 @@
                 </div>
                 <div class="payment-box">
                     <p class="payment-subtotal">Sub-total:</p>
-                    <span class="payment-subtotal">{{ getSubTotal(cartItems) | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                    <span class="payment-subtotal">{{ totalItems | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
                 </div>
                 <div class="order-line"></div>
                 <div class="payment-box">
                     <p class="payment-total">Total:</p>
-                    <span class="payment-total">{{ getTotal(cartItems) | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                    <span class="payment-total">{{ getTotal() | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
                 </div>
             </div>
         </div>
         <div class="order-button">
-            <button type="button" class="order-btn">
+            <button type="button" class="order-btn" (click)="toggleModal()">
                 Ir a pagar
             </button>
         </div>

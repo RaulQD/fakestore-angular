@@ -55,9 +55,11 @@ export class StoreService {
         });
         this.saveLocalStorage(items);
     }
-    getTotal(items: ItemsCart[]) {
+    getTotal() {
+        const items = [...this._cartItems];
         //retorna el total de la suma de los precios de los items
-        return items.map((item) => item.price * item.quantity).reduce((prev, current) => prev + current, 0);
+        const total = items.map((item) => item.price * item.quantity).reduce((prev, current) => prev + current, 0);
+        return total;
     }
     removeCartItems(cartItem: ItemsCart) {
         //filtra los items que no coincidan con el id del item a eliminar
@@ -87,10 +89,9 @@ export class StoreService {
             icon: 'error',
             title: 'Producto eliminado del carrito'
         });
-        //remover el item del local storage
 
-        //retorna el carrito de compras actualizado
-        return this._cartItems = [...filterItems];
+        // //retorna el carrito de compras actualizado
+        // return this._cartItems = [...filterItems];
     }
     removeAllCartItems(): void {
         //resetea el carrito de compras

@@ -26,6 +26,9 @@ import { ProductsImagePipe } from '../products/pipes/products-image.pipe';
     CommonModule,
     CheckoutRoutingModule,
     ReactiveFormsModule,
+  ],
+  exports: [
+    PaymentComponent
   ]
 })
 export class CheckoutModule { }

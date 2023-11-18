@@ -10,12 +10,13 @@ import { SharedSearchComponent } from './components/shared-search/shared-search.
 import { SharedWishlistComponent } from './components/shared-wishlist/shared-wishlist.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { PaymentComponent } from '../pages/checkout/components/payment/payment.component';
+import { CheckoutModule } from '../pages/checkout/checkout.module';
 
 
 
 @NgModule({
     declarations: [HeaderComponent, FooterComponent, SharedCartComponent, ModalComponent, SharedSearchComponent, SharedWishlistComponent, NotificationsComponent],
-    imports: [CommonModule, HttpClientModule, RouterModule],
+    imports: [CommonModule, HttpClientModule, RouterModule, CheckoutModule],
     exports: [HeaderComponent, FooterComponent, SharedSearchComponent, NotificationsComponent],
 })
 export class SharedModule { }
