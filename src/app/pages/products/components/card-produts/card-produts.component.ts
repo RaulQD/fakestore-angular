@@ -15,9 +15,8 @@ export class CardProdutsComponent {
   private router = inject(Router);
   private storeService = inject(StoreService);
 
-  truncateString(text: string | undefined, maxLength: number): string {
-    //valida si el texto es undefined o null y retorna un string vacio
-    if (!text) return '';
+  truncateString(text: string, maxLength: number): string {
+
     //valida si el texto es menor o igual al maxLength y retorna el texto
     if (text.length <= maxLength) return text;
     //retorna el texto truncado con los puntos suspensivos

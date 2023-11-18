@@ -13,6 +13,9 @@ export class StoreService {
 
     private _shoppingCart = new BehaviorSubject<ItemsCart[]>([]);
     shoppingCart$ = this._shoppingCart.asObservable();
+    constructor() {
+        this.loadLocalStorage();
+    }
 
     addToCart(cartItem: ItemsCart): void {
         //Crea una copia del carrito de compras para evitar modificar el original
@@ -50,7 +53,7 @@ export class StoreService {
             icon: 'success',
             title: 'Producto agregado al carrito'
         });
-        this.saveLocalStorage();
+        this.saveLocalStorage(items);
     }
     getTotal(items: ItemsCart[]) {
         //retorna el total de la suma de los precios de los items
@@ -62,6 +65,9 @@ export class StoreService {
         //actualiza el carrito de compras
         this._shoppingCart.next({ ...filterItems });
         console.log('item eliminado', filterItems)
+        //Eliminar un item del carrito de compras en el local storage
+        this.saveLocalStorage(filterItems);
+
         //message
         Swal.mixin({
             toast: true,
@@ -81,6 +87,8 @@ export class StoreService {
             icon: 'error',
             title: 'Producto eliminado del carrito'
         });
+        //remover el item del local storage
+
         //retorna el carrito de compras actualizado
         return this._cartItems = [...filterItems];
     }
@@ -102,15 +110,18 @@ export class StoreService {
         })
         //envia el carrito de compras actualizado
         this._shoppingCart.next({ ...this._cartItems });
+        this.saveLocalStorage(this._cartItems);
         console.log('item eliminado', this._cartItems);
     }
     //lOCAL STORAGE
-    saveLocalStorage(): void {
-        localStorage.setItem('cart', JSON.stringify(this._cartItems));
+    private saveLocalStorage(cartItem: ItemsCart[]): void {
+        localStorage.setItem('cart', JSON.stringify(cartItem));
     }
-    loadLocalStorage(): void {
-        if (localStorage.getItem('cart')) {
-            this._cartItems = JSON.parse(localStorage.getItem('cart')!);
+    private loadLocalStorage(): void {
+        const storedItems = localStorage.getItem('cart');
+        if (storedItems) {
+            this._cartItems = JSON.parse(storedItems);
+            this._shoppingCart.next({ ...this._cartItems });
         }
     }
 }

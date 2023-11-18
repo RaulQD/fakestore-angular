@@ -35,13 +35,18 @@ const routes: Routes = [
                         (m) => m.ProductsDetailsModule
                     ),
             },
-            // {
-            //     path: 'checkout',
-            //     loadChildren: () =>
-            //         import('../pages/checkout/pages/checkout-info/checkout-info.module').then(
-            //             (m) => m.CheckoutInfoModule
-            //         ),
-            // },
+            {
+                path: 'myaccount',
+                loadChildren: () =>
+                    import('../pages/myaccount/myaccount.module').then((m) => m.MyaccountModule),
+            },
+            {
+                path: 'checkout',
+                loadChildren: () =>
+                    import('../pages/checkout/checkout.module').then(
+                        (m) => m.CheckoutModule
+                    ),
+            },
         ],
     },
 ];

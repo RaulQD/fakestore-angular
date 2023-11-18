@@ -9,6 +9,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { SharedSearchComponent } from './components/shared-search/shared-search.component';
 import { SharedWishlistComponent } from './components/shared-wishlist/shared-wishlist.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { PaymentComponent } from '../pages/checkout/components/payment/payment.component';
 
 
 

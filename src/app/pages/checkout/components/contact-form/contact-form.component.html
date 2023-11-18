@@ -1,0 +1,32 @@
+<div class="form__data--client" [formGroupName]="groupName">
+    <fieldset class="form-fieldset">
+        <legend class="form-legend">Chequeo rápido</legend>
+        <div class="checkout-express__content">
+            <div class="bg-checkout">
+                <img src="../../../../../assets/icon/paypal.svg" alt="express" class="bg-checkout--img">
+            </div>
+            <div class="bg-checkout">
+                <img src="../../../../../assets/icon/gpay.svg" alt="express" class="bg-checkout--img">
+            </div>
+            <div class="bg-checkout">
+                <img src="../../../../../assets/icon/paypal.svg" alt="express" class="bg-checkout--img">
+            </div>
+        </div>
+    </fieldset>
+    <div class="checkout-divider__content">
+        <div class="checkout-divider"></div>
+        <p class="checkout-text">o</p>
+        <div class="checkout-divider"></div>
+    </div>
+    <h4 class="checkout-title">{{titleName}}</h4>
+    <div class="checkout__wrap">
+        <div class="checkout__box">
+            <label for="email" class="checkout__label">Correo electronico:</label>
+            <input type="text" class="checkout__input" id="email" formControlName="email" placeholder=" " autocomplete="off">
+        </div>
+        <div class="checkout__box">
+            <label for="phone" class="checkout__label">Teléfono:</label>
+            <input type="text" class="checkout__input" id="phone" formControlName="phone" placeholder=" ">
+        </div>
+    </div>
+</div>

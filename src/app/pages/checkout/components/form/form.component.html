@@ -1,0 +1,11 @@
+<article>
+    <form class="form__content" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <div class="form-checkout">
+            <app-contact-form [parentForm]="checkoutForm" groupName="contactInfo" titleName="Información de contacto"></app-contact-form>
+            <app-address-form [parentForm]="checkoutForm" groupName="addressInfo" titleName="Dirección de envío"></app-address-form>
+        </div>
+    </form>
+</article>
+<strong>FormGroup.value
+    <pre>{{ checkoutForm.value | json}}</pre>
+</strong>

@@ -51,20 +51,11 @@
                     </button>
                     <ul class="dropdown__menu" [ngClass]="showDropDown ? 'dropdown__active' : ''">
                         <li class="dropdown__item">
-                            <a [routerLink]="['/fakestore/myaccount/login']"
+                            <a [routerLink]="['/fakestore/myaccount']"
                                 class="dropdown__menu--item dropdown__button--item"
                                 (click)="closeDropdown()"
                                 >
-                                Inicia Sesión
-                            </a>
-                        </li>
-                        <li clasS="dropdown__item">
-                            <a
-                                [routerLink]="['/fakestore/myaccount/registration']"
-                                class="dropdown__menu--item"
-                                (click)="closeDropdown()"
-                            >
-                                Regístrate
+                                Mi cuenta
                             </a>
                         </li>
                     </ul>
@@ -90,4 +81,3 @@
         </div>
     </nav>
 </header>
-<app-modal></app-modal>

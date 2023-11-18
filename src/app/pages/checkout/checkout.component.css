@@ -1,0 +1,17 @@
+.checkout__container{
+    width:1200px;
+    margin: 0 auto;
+}
+.checkout__grid{
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap:1.5rem;
+}
+
+.checkout__information{
+    width: calc(100% - 395px);
+}
+.checkout__products{
+    width:395px;
+}

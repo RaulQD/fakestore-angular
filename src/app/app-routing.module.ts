@@ -9,10 +9,6 @@ const routes: Routes = [
         loadChildren: () => import('./layout/layout.module').then((m) => m.LayoutModule),
     },
     {
-        path: 'checkout',
-        loadChildren: () => import('./pages/checkout/checkout.module').then((m) => m.CheckoutModule),
-    },
-    {
         path: '**',
         redirectTo: 'fakestore',
     },

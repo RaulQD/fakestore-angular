@@ -1,0 +1,55 @@
+<article>
+    <div class="order__container">
+        <h3 class="order-title">Resumen de la compra</h3>
+        <div class="order-products" *ngFor="let items of cartItems">
+            <div class="order-products__img">
+                <img src="{{items.images}}" alt="{{items.title}}" class="order-image">
+            </div>
+            <div class="order__info">
+                <div class="order__data">
+                    <p class="order__name">{{items.title}}</p>
+                    <p class="order__text">{{truncateString(items.description,30)}}</p>
+                    <p class="order__quantity">Cantidad:<span class="order__quantity--number">{{items.quantity}}</span></p>
+                </div>
+                <div class="order__data order-price">
+                    <p class="order__price">{{ items.price | currency:'S/.&nbsp;':'symbol-narrow'}}</p>
+                    <span class="order__discunt">{{ items.price  | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="order-line"></div>
+        <div class="order-link__products">
+            <a [routerLink]="['/fakestore/products']" class="links-products">
+                <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="#7C7E92" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="#7C7E92" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="#7C7E92" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                Volver a productos
+            </a>
+        </div>
+        <div class="payment">
+            <div class="payment-prices">
+                <div class="payment-box">
+                    <p class="payment-shipping">Costo de envío:</p>
+                    <span class="payment-shipping">{{7.90 | currency :'S/.&nbsp;':'symbol-narrow'}}</span>
+                </div>
+                <div class="payment-box">
+                    <p class="payment-subtotal">Sub-total:</p>
+                    <span class="payment-subtotal">{{ getSubTotal(cartItems) | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                </div>
+                <div class="order-line"></div>
+                <div class="payment-box">
+                    <p class="payment-total">Total:</p>
+                    <span class="payment-total">{{ getTotal(cartItems) | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="order-button">
+            <button type="button" class="order-btn">
+                Ir a pagar
+            </button>
+        </div>
+    </div>
+
+</article>

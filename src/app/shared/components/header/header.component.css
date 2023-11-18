@@ -101,12 +101,6 @@
     cursor: pointer;
     position: relative;
 }
-.dropdown__item{
-    margin-bottom: 1rem;
-}
-.dropdown__item:nth-child(2){
-    margin-bottom: 0;
-}
 .dropdown__button {
     background-color: transparent;
     border: none;

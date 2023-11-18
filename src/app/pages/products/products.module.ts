@@ -14,4 +14,4 @@ import { ProductsImagePipe } from './pipes/products-image.pipe';
     declarations: [ProductsComponent, ListProductsComponent, CardProdutsComponent, ProductsImagePipe],
     imports: [CommonModule, ProductsRoutingModule, SharedModule],
 })
-export class ProductsModule {}
+export class ProductsModule { }

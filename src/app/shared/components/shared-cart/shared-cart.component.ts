@@ -30,7 +30,7 @@ export class SharedCartComponent implements OnInit, OnDestroy {
     }
 
     getCartItems() {
-        this.storeService.shoppingCart$.subscribe((items: ItemsCart[]) => {
+        this.subscription = this.storeService.shoppingCart$.subscribe((items: ItemsCart[]) => {
             this.cartItems = Object.values(items);
         });
     }

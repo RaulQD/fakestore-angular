@@ -1,0 +1,36 @@
+<div class="form__shipping--address" [formGroupName]="groupName">
+    <h4 class="checkout-title">{{titleName}}</h4>
+    <div class="shipping-wrap">
+        <div class="checkout__box">
+            <label for="region" class="checkout__label">Departamento</label>
+            <input type="text" id="region" formControlName="region" class="checkout__input"  placeholder=" ">
+            <span class="errors-message" *ngIf="addressForm.get('region')!.invalid && addressForm.get('region')!.touched">
+                Este campo es requerido.
+            </span>
+        </div>
+        <div class="checkout__box">
+            <label for="firtsName" class="checkout__label">Nombres</label>
+            <input type="text" id="firtsName" formControlName="firtsName" class="checkout__input" placeholder=" ">
+        </div>
+        <div class="checkout__box">
+            <label for="lastName" class="checkout__label">Apellidos</label>
+            <input type="text" id="lastName" formControlName="lastName" class="checkout__input" placeholder=" ">
+        </div>
+        <div class="checkout__box">
+            <label for="address" class="checkout__label">Dirección</label>
+            <input type="text" id="address" formControlName="address" class="checkout__input" placeholder=" ">
+        </div>
+        <div class="checkout__box">
+            <label for="city" class="checkout__label">Ciudad</label>
+            <input type="text" id="city" formControlName="city" class="checkout__input" placeholder=" ">
+        </div>
+        <div class="checkout__box">
+            <label for="district" class="checkout__label">Distrito</label>
+            <input type="text" id="district" formControlName="district" class="checkout__input" placeholder=" ">
+        </div>
+        <div class="checkout__box">
+            <label for="reference" class="checkout__label">Referencias</label>
+            <input type="text" id="reference" formControlName="reference" class="checkout__input" placeholder=" ">
+        </div>
+    </div>
+</div>
