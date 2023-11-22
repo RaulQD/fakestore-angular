@@ -1,0 +1,33 @@
+.form-fieldset{
+  border: 1px solid #E3E5ED;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+}
+.form-legend{
+  font-size: 14px;
+  text-align: center;
+  color: #1D1F32;
+  font-family: 'Poppins', sans-serif;
+}
+.checkout-express__content{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.bg-checkout{
+  width:200px;
+  margin: 0 auto;
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg-checkout--img{
+  width: 60px;
+}
+.bg-checkout--img:nth-child(2){
+  width: 40px;
+}

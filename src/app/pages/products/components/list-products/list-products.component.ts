@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 
-import { Products } from '../../interface/products.interface';
+import { Products } from '../../../../interface/products.interface';
 import { ProductsService } from 'src/app/pages/service/products.service';
 
 @Component({

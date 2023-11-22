@@ -1,6 +1,6 @@
 import { Component, HostListener, OnDestroy, OnInit, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ItemsCart } from 'src/app/pages/products/interface/products.interface';
+import { ItemsCart } from 'src/app/interface/products.interface';
 import { SharedService } from 'src/app/pages/service/shared.service';
 import { StoreService } from 'src/app/pages/service/store.service';
 
@@ -52,6 +52,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
     //modal
     toogleModal() {
+
         //CERRAR EL MENU DESPLEGABLE
         this.showDropDown = false;
     }

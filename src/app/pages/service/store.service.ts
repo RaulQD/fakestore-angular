@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ItemsCart } from 'src/app/pages/products/interface/products.interface';
+import { ItemsCart } from 'src/app/interface/products.interface';
 import Swal from 'sweetalert2';
 
 
@@ -90,8 +90,7 @@ export class StoreService {
             title: 'Producto eliminado del carrito'
         });
 
-        // //retorna el carrito de compras actualizado
-        // return this._cartItems = [...filterItems];
+        return this._cartItems = [...filterItems];
     }
     removeAllCartItems(): void {
         //resetea el carrito de compras

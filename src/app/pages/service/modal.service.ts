@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root'
 })
 export class ModalService {
-    private showMdalSources = new BehaviorSubject<boolean>(false);
 
-    getShowModal() {
-        return this.showMdalSources.asObservable();
-    }
-    setShowModal(value: boolean) {
-        this.showMdalSources.next(value);
-    }
+  private modalSources = new BehaviorSubject<boolean>(false);
+  modalSources$ = this.modalSources.asObservable();
+  constructor() { }
+
+  toggleModal(value:boolean) {
+    this.modalSources.next(value);
+  }
+
 }

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable, catchError, of } from 'rxjs';
 import { environments } from 'src/environments/environments';
-import { Products } from '../products/interface/products.interface';
+import { Products } from '../../interface/products.interface';
 
 @Injectable({
   providedIn: 'root'

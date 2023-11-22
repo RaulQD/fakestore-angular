@@ -1,8 +1,6 @@
 export interface Contact {
     email: string;
     phone: string;
-}
-export interface Address {
     address: string;
     city: string;
     region: string;

@@ -7,9 +7,9 @@ import { FormComponent } from './components/form/form.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ContactFormComponent } from './components/contact-form/contact-form.component';
-import { AddressFormComponent } from './components/address-form/address-form.component';
-import { ProductsImagePipe } from '../products/pipes/products-image.pipe';
+
+import { CheckoutFastComponent } from './components/checkoutFast/checkoutFast.component';
+
 
 
 @NgModule({
@@ -18,9 +18,8 @@ import { ProductsImagePipe } from '../products/pipes/products-image.pipe';
     FormComponent,
     PaymentComponent,
     OrderDetailsComponent,
-    ContactFormComponent,
-    AddressFormComponent,
-
+   
+    CheckoutFastComponent,
   ],
   imports: [
     CommonModule,
