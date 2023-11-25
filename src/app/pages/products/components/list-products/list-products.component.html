@@ -1,7 +1,7 @@
 <div class="products-container grid" *ngIf="productsList.length >= 0">
      <app-card-produts *ngFor="let products of productsList.slice(startWith,visibilityProductsCount)" [products]="products"></app-card-produts>
 </div>
-<div class="load-products"> 
+<div class="load-products" >  
      <button class="load-button" type="button" (click)="loadProducts()" [disabled]="isLoading">
          <span *ngIf="!isLoading">cargar más productos</span>
           <div class="loader" *ngIf="isLoading">
@@ -19,3 +19,4 @@
           </div>
      </button>
 </div>
+

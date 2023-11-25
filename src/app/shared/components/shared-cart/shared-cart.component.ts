@@ -3,8 +3,8 @@ import { Component, DoCheck, OnDestroy, OnInit, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { ItemsCart } from 'src/app/interface/products.interface';
-import { SharedService } from 'src/app/pages/service/shared.service';
-import { StoreService } from 'src/app/pages/service/store.service';
+import { SharedService } from 'src/app/service/shared.service';
+import { StoreService } from 'src/app/service/store.service';
 
 @Component({
     selector: 'app-shared-cart',
@@ -18,6 +18,7 @@ export class SharedCartComponent implements OnInit, OnDestroy {
     cartItems: ItemsCart[] = [];
     totalItems: number = 0;
     emptyMessage: boolean = false;
+    cartEmpty: boolean = false;
 
     private sharedService = inject(SharedService);
     private storeService = inject(StoreService);
@@ -34,7 +35,7 @@ export class SharedCartComponent implements OnInit, OnDestroy {
     }
 
     getCartItems() {
-        this.subscription = this.storeService.shoppingCart$.subscribe((items: ItemsCart[]) => {
+        this.subscription = this.storeService.shoppingCart$.subscribe((items) => {
             this.cartItems = Object.values(items);
         });
     }
@@ -42,8 +43,12 @@ export class SharedCartComponent implements OnInit, OnDestroy {
         this.storeService.removeCartItems(cartItems);
 
     }
+    removeAllCartItems() {
+        // this.storeService.removeAllCartItems();
+        console.log(this.storeService.removeAllCartItems())
+    }
     getTotal() {
-        this.subscription = this.storeService.shoppingCart$.subscribe((items: ItemsCart[]) => {
+        this.subscription = this.storeService.shoppingCart$.subscribe(() => {
             this.totalItems = this.storeService.getTotal();
         });
     }

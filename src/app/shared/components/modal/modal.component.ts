@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ModalService } from 'src/app/pages/service/modal.service';
+import { ModalService } from 'src/app/service/modal.service';
 
 @Component({
   selector: 'app-modal',

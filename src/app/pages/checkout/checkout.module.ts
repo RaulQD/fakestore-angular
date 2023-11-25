@@ -9,6 +9,9 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { CheckoutFastComponent } from './components/checkoutFast/checkoutFast.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+
+
 
 
 
@@ -18,13 +21,13 @@ import { CheckoutFastComponent } from './components/checkoutFast/checkoutFast.co
     FormComponent,
     PaymentComponent,
     OrderDetailsComponent,
-   
     CheckoutFastComponent,
   ],
   imports: [
     CommonModule,
     CheckoutRoutingModule,
     ReactiveFormsModule,
+    SharedModule
   ],
   exports: [
     PaymentComponent

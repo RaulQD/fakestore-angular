@@ -9,4 +9,4 @@ import { SharedModule } from '../shared/shared.module';
     declarations: [LayoutComponent],
     imports: [CommonModule, LayoutRoutingModule, SharedModule],
 })
-export class LayoutModule {}
+export class LayoutModule { }

@@ -3,8 +3,8 @@ import { Products } from '../../interface/products.interface';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
-import { StoreService } from '../service/store.service';
-import { ProductsService } from '../service/products.service';
+import { StoreService } from '../../service/store.service';
+import { ProductsService } from '../../service/products.service';
 
 
 @Component({

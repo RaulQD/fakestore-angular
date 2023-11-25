@@ -93,10 +93,14 @@ export class StoreService {
         return this._cartItems = [...filterItems];
     }
     removeAllCartItems(): void {
-        //resetea el carrito de compras
-        this._cartItems = [];
+        //resetea el carrito de compras a un array vacio y que no vote undefined
+        const items = [...this._cartItems];
         //envia el carrito de compras actualizado
-        this._shoppingCart.next({ ...this._cartItems });
+        this._shoppingCart.next(items);
+        // Eliminar todos los items del carrito de compras en el local storage
+        this.saveLocalStorage(items);
+        console.log('carrito vacio', items);
+
     }
     removeQuantity(item: ItemsCart): void {
         //itera sobre cada item del array _cartItems y comprueba si el id del item coincide con el id del parametro item
@@ -113,6 +117,15 @@ export class StoreService {
         this.saveLocalStorage(this._cartItems);
         console.log('item eliminado', this._cartItems);
     }
+    //CART IS EMPTY
+    isCartEmpty(): boolean {
+        const items = [...this._cartItems];
+        if (items.length === 0) {
+
+        }
+        return this._cartItems.length === 0;
+    }
+
     //lOCAL STORAGE
     private saveLocalStorage(cartItem: ItemsCart[]): void {
         localStorage.setItem('cart', JSON.stringify(cartItem));

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { SharedService } from 'src/app/pages/service/shared.service';
+import { SharedService } from 'src/app/service/shared.service';
 
 
 @Component({

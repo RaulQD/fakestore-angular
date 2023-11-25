@@ -89,8 +89,9 @@
     color: #75869C;
     font-size:14px;
 }
+
 .ng-touched.ng-invalid:is(input,select),
-.ng-touched.ng-invalid:is(input,select){
+.ng-dirty.ng-invalid:is(input,select){
     border: 1px solid red;
 }
 .errors-message{
@@ -99,11 +100,6 @@
 }  
 /*========= FORM CHECKOUT =========*/
 
-.pay__flex {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
 .pay__content{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -144,7 +140,7 @@
 }
 
 .card__bank-logo {
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
 }
 .card__bank {
     color: var(--white-color);
@@ -152,8 +148,9 @@
     background-image: url('../../../../../assets/img/bg-card-front.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 400px;
-    height: 227px;
+    width: 100%;
+    max-width: 400px;
+    /* height: 307px; */
     padding: 20px 20px 0px 20px;
 }
 .card__bank-number {
