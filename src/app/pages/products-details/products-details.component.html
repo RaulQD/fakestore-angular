@@ -1,38 +1,37 @@
-<main class="main">
-    <section class="details section">
-        <div class="container flex">
-            <div class="left">
-                <div class="details__images">
-                    <img [src]="products.images[0]" alt="casaca1" class="details__img">
+    <main class="main">
+        <section class="details section">
+            <div class="container flex">
+                <div class="left">
+                    <div class="details__images">
+                        <img [src]="products.images[0]" alt="casaca1" class="details__img">
+                    </div>
+                    <div class="option flex-img">
+                        <img [src]="products.images[1]" alt="casaca2" class="option__img">
+                        <img [src]="products.images[2]" alt="polera1" class="option__img">
+                    </div>
                 </div>
-                <div class="option flex-img">
-                    <img [src]="products.images[1]" alt="casaca2" class="option__img">
-                    <img [src]="products.images[2]" alt="polera1" class="option__img">
+                <div class="right">
+                    <h3 class="details__title"> Poleras escolares trught</h3>
+                    <div class="price">
+                        <p class="price__real">{{products.price | currency:'S/.&nbsp;':'symbol-narrow'}}</p>
+                        <span class="price__discount">{{ products.price + 90 | currency:'S/.&nbsp;':'symbol-narrow'}}</span>
+                    </div>
+                    <h4 class="quantity__title">Cantidad</h4>
+                    <div class="quantity add-quantity">
+                        <button type="button" class="quantity--actions">
+                            <img src="../../../assets/icon/minus.svg" alt="minus" class="icon-quantity">
+                        </button>
+                        <span class="quantity-number">1</span>
+                        <button type="button" class="quantity--actions">
+                            <img src="../../../assets/icon/plus.svg" alt="minus" class="icon-quantity">
+                        </button>
+                    </div>
+                    <div class="actions">
+                        <button type="button" class="actions-add" (click)="onAddToCart()">Agregar al carrito</button>
+                    </div>
+                    <p class="description">{{products.description}}</p>
                 </div>
             </div>
-            <div class="right">
-                <h3 class="details__title"> Poleras escolares trught</h3>
-                <div class="price">
-                    <p class="price__real">S/. 648</p>
-                    <span class="price__discount">S/. 766</span>
-                </div>
-                <h4 class="quantity__title">Cantidad</h4>
-                <div class="quantity add-quantity">
-                    <button type="button" class="quantity--actions">
-                        <img src="../../../assets/icon/minus.svg" alt="minus" class="icon-quantity">
-                    </button>
-                    <input type="number" placeholder="1" class="quantity__input" min="1" max="10">
-                    <button type="button" class="quantity--actions">
-                        <img src="../../../assets/icon/plus.svg" alt="minus" class="icon-quantity">
-                    </button>
-                </div>
-                <div class="actions">
-                    <a class="actions-buy">Comprar ahora</a>
-                    <button type="button" class="actions-add" (click)="onAddToCart()">Agregar al carrito</button>
-                </div>
-                <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum unde molestias, iure deleniti repellat culpa ipsum, sint minima officia repellendus maxime voluptatem ut enim. Maiores dolor odio dignissimos deleniti rerum.</p>
-            </div>
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
 

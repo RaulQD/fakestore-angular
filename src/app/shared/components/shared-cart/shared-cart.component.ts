@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { ItemsCart } from 'src/app/interface/products.interface';
 import { SharedService } from 'src/app/service/shared.service';
 import { StoreService } from 'src/app/service/store.service';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-shared-cart',
@@ -54,7 +55,30 @@ export class SharedCartComponent implements OnInit, OnDestroy {
     }
 
     onAddQuantity(item: ItemsCart) {
-        this.storeService.addToCart(item);
+        if (item.quantity < 10) {
+            this.storeService.addToCart(item);
+        } else {
+            Swal.mixin({
+                toast: true,
+                position: 'bottom',
+                showConfirmButton: false,
+                width: '21.875rem',
+                timer: 3000,
+                timerProgressBar: true,
+                customClass: {
+                    title: 'custom-popup-title-class',
+                    icon: 'custom-popup-icon-class',
+                },
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            }).fire({
+                icon: 'warning',
+                title: 'Solo puedes llevar 10 productos'
+            
+            });
+        }
     }
     onRemoveQuantity(item: ItemsCart) {
         this.storeService.removeQuantity(item);

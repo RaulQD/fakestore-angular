@@ -3,7 +3,7 @@
         <h3 class="order-title">Resumen de la compra</h3>
         <div class="order-products" *ngFor="let items of cartItems">
             <div class="order-products__img">
-                <img src="{{items.images}}" alt="{{items.title}}" class="order-image">
+                <img src="{{items.images[0]}}" alt="{{items.title}}" class="order-image">
             </div>
             <div class="order__info">
                 <div class="order__data">

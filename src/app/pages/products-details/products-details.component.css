@@ -15,6 +15,8 @@
 }
 .add-quantity{
     display: flex;
+    justify-content: flex-start;
+    gap:0.5rem;
 }
 .details__images{
     display: flex;
@@ -54,18 +56,13 @@
     margin-bottom: 0.5rem;
     font-size: 0.875rem;
 }
-.quantity__input{
-    width: 30px;
-    height: 30px;
+.quantity-number{
     border: 1px solid #d7d7d7;
     border-radius: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
-    margin:0 0.5rem;
-    outline: none;
-}
-.quantity__input[type="number"]::-webkit-inner-spin-button{
-    -webkit-appearance: none;
 }
 .quantity--actions{
     display: flex;
@@ -75,7 +72,6 @@
     border: none;
     cursor: pointer;
 }
-
 .icon-quantity{
     width:20px;
 }
@@ -91,29 +87,19 @@
     border-radius: 10px;
 }
 .actions-add{
-    background-color: #d7d7d7;
+    background-color: #01727f;
+    color:#ffffff;
     border:none;
     font-size:0.875rem;
     font-family: 'Poppins', sans-serif;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
     cursor:pointer;
 }
 .actions-add:hover{
-    background-color: #bdbdbd;
-    color:#ffffff;
-}
-.actions-buy{
-    color:#ffffff;
-    background-color: #01727f;
-    border:none;
-    font-size: 0.875rem;
-    text-align: center;
-    cursor:pointer;
-    transition: background-color 0.4s ease-in-out;
-}
-.actions-buy:hover{
     background-color: #0b0b0b;
+
 }
 .description{
-    font-size: 0.875rem;    
+    font-size: 0.875rem;
+    line-height: 1.5rem;
 }

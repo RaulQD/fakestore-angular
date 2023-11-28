@@ -13,5 +13,6 @@ import { ProductsImagePipe } from './pipes/products-image.pipe';
 @NgModule({
     declarations: [ProductsComponent, ListProductsComponent, CardProdutsComponent, ProductsImagePipe],
     imports: [CommonModule, ProductsRoutingModule, SharedModule],
+    exports: [ProductsImagePipe]
 })
 export class ProductsModule { }

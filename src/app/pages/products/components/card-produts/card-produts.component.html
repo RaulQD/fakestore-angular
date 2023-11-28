@@ -1,7 +1,7 @@
 <article>
     <div class="card__product">
         <a (click)="showDetails()">
-            <img [src]="products | productsImage" alt="" class="card__product--img">
+            <img [src]="products | productsImage" [alt]="products.title" class="card__product--img">
             <div class="card__info">
                 <h3 class="card__info--title"> {{products.title}}</h3>
                 <p class="card__info--description">{{truncateString(products.description, 50)}}</p>
@@ -14,9 +14,6 @@
         
         <div class="card__action">
             <button type="button" class="add__button--cart" (click)="onAddToCart()">Agregar al carrito</button>
-            <!-- <button type="button" class="add--button--wishlist">
-                <img src="../../../../../assets/icon/heart.svg" alt="heart" class="add-wishlist">
-            </button> -->
         </div>
     </div>
 </article>

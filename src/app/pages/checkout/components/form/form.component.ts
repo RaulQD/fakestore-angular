@@ -23,7 +23,7 @@ export class FormComponent implements OnInit {
     checkoutForm: FormGroup = this.formBuilder.group({
         email: ['', [Validators.required, Validators.pattern(customValidators.emailPattern)]],
         phone: ['', [Validators.required, CustomValidators.phoneNumbers]],
-        firtsName: ['', [Validators.required, CustomValidators.onlyLetters]],
+        firstName: ['', [Validators.required, CustomValidators.onlyLetters]],
         lastName: ['', [Validators.required, Validators.pattern(customValidators.stringPattern)]],
         address: ['', [Validators.required, Validators.minLength(10)]],
         city: ['', [Validators.required]],
@@ -32,7 +32,7 @@ export class FormComponent implements OnInit {
         reference: ['', [Validators.required]],
     })
     paymentForm: FormGroup = this.formBuilder.group({
-        cardNumber: ['', [Validators.required, CustomValidators.creditCard, CustomValidators.onlyNumbers, Validators.maxLength(16)], Validators.minLength(16)],
+        cardNumber: ['', [Validators.required, CustomValidators.onlyNumbers, Validators.maxLength(16),Validators.minLength(16)]],
         cardName: ['', [Validators.required]],
         cardMonth: ['', [Validators.required]],
         cardYear: ['', [Validators.required]],
@@ -71,7 +71,7 @@ export class FormComponent implements OnInit {
         }
         return null;
     }
-    isVaidPayment(field: string) {
+    isValidPayment(field: string) {
         return this.paymentForm.controls[field]?.touched && this.paymentForm.controls[field].errors;
     }
     getFieldErrorPayment(field: string): string | null {

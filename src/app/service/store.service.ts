@@ -19,9 +19,9 @@ export class StoreService {
 
     addToCart(cartItem: ItemsCart): void {
         //Crea una copia del carrito de compras para evitar modificar el original
-        const items = [...this._cartItems];
+        const items: ItemsCart[] = [...this._cartItems];
         //busca si el item ya existe en el carrito de compras 
-        const itemsCart = this._cartItems.find((item) => item.id === cartItem.id);
+        const itemsCart: ItemsCart | undefined = this._cartItems.find((item) => item.id === cartItem.id);
         //valida si el item existe en el carrito de compras, si existe aumenta la cantidad
         if (itemsCart) {
             itemsCart.quantity += 1;
@@ -56,14 +56,14 @@ export class StoreService {
         this.saveLocalStorage(items);
     }
     getTotal() {
-        const items = [...this._cartItems];
+        const items: ItemsCart[] = [...this._cartItems];
         //retorna el total de la suma de los precios de los items
-        const total = items.map((item) => item.price * item.quantity).reduce((prev, current) => prev + current, 0);
+        const total: number = items.map((item) => item.price * item.quantity).reduce((prev, current) => prev + current, 0);
         return total;
     }
     removeCartItems(cartItem: ItemsCart) {
         //filtra los items que no coincidan con el id del item a eliminar
-        const filterItems = this._cartItems.filter((item) => item.id !== cartItem.id);
+        const filterItems: ItemsCart[] = this._cartItems.filter((item) => item.id !== cartItem.id);
         //actualiza el carrito de compras
         this._shoppingCart.next({ ...filterItems });
         console.log('item eliminado', filterItems)
@@ -94,7 +94,7 @@ export class StoreService {
     }
     removeAllCartItems(): void {
         //resetea el carrito de compras a un array vacio y que no vote undefined
-        const items = [...this._cartItems];
+        const items: ItemsCart[] = [...this._cartItems];
         //envia el carrito de compras actualizado
         this._shoppingCart.next(items);
         // Eliminar todos los items del carrito de compras en el local storage
@@ -117,21 +117,13 @@ export class StoreService {
         this.saveLocalStorage(this._cartItems);
         console.log('item eliminado', this._cartItems);
     }
-    //CART IS EMPTY
-    isCartEmpty(): boolean {
-        const items = [...this._cartItems];
-        if (items.length === 0) {
-
-        }
-        return this._cartItems.length === 0;
-    }
 
     //lOCAL STORAGE
     private saveLocalStorage(cartItem: ItemsCart[]): void {
         localStorage.setItem('cart', JSON.stringify(cartItem));
     }
     private loadLocalStorage(): void {
-        const storedItems = localStorage.getItem('cart');
+        const storedItems: string | null = localStorage.getItem('cart');
         if (storedItems) {
             this._cartItems = JSON.parse(storedItems);
             this._shoppingCart.next({ ...this._cartItems });

@@ -1,6 +1,12 @@
 <article>
     <ng-container *ngIf="currentStep === 1">
-        <form class="form__content" [formGroup]="checkoutForm" (ngSubmit)="next()">
+        <div>
+            <a [routerLink]="['/fakestore/products']" class="checkout__back">
+                <img src="../../../assets/icon/Arrow.svg" alt="arrow" class="back-img">
+                Atrás
+            </a>
+        </div>
+        <form class="form__content" [formGroup]="checkoutForm">
             <div class="form-checkout">
                 <div class="form__data--client">
                     <checkout-fast></checkout-fast>
@@ -30,14 +36,14 @@
                     <div class="shipping-wrap">
                         <div class="shipping__box">
                             <label for="region" class="checkout__label">Departamento</label>
-                            <input type="text" id="region" formControlName="region" class="checkout__input">
+                            <input type="text" id="region" formControlName="region" class="checkout__input" >
                             <span class="errors-message" *ngIf="isValid('region')">{{getFieldError("region")}}</span>
                         </div>
                         <div class="shipping__box">
-                            <label for="firtsName" class="checkout__label">Nombres</label>
-                            <input type="text" id="firtsName" formControlName="firtsName" class="checkout__input">
+                            <label for="firstName" class="checkout__label">Nombres</label>
+                            <input type="text" id="firstName" formControlName="firstName" class="checkout__input">
                             <span class="errors-message"
-                                *ngIf="isValid('firtsName')">{{getFieldError("firtsName")}}</span>
+                                *ngIf="isValid('firstName')">{{getFieldError("firstName")}}</span>
                         </div>
                         <div class="shipping__box">
                             <label for="lastName" class="checkout__label">Apellidos</label>
@@ -69,26 +75,33 @@
                     </div>
                 </div>
                 <div class="checkout__button">
-                    <button type="submit" class="checkout__submit">Siguiente</button>
+                    <button type="submit" class="checkout__submit" (click)="next()" >Siguiente</button>
                 </div>
             </div>
         </form>
     </ng-container>
-    <ng-container *ngIf="currentStep === 2">
+    <!-- <ng-container *ngIf="currentStep === 2"> -->
         <div class="pay__flex">
+            <div class="pay-header">
+                <h4 class="pay-header__title">Pago</h4>
+                <p class="pay-header__text">Todas las transacciones son seguras y encriptadas</p>
+            </div>
+            <div class="">
+
+            </div>
             <form class="pay" [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
                 <div class="pay__content">
                     <div class="pay__box">
                         <label for="cardName" class="pay__label">Nombre Completo</label>
                         <input type="text" class="pay__input" formControlName="cardName" id="cardName"
-                            placeholder="e.g. Nombre Completo" maxlength="24" />
-                        <span class="errors-message" *ngIf="isVaidPayment('cardName')">{{getFieldErrorPayment('cardName')}}</span>
+                            placeholder="e.g. Nombre Completo" [class.error]="isValidPayment"/>
+                        <span class="errors-message" *ngIf="isValidPayment('cardName')">{{getFieldErrorPayment('cardName')}}</span>
                     </div>
                     <div class="pay__box">
                         <label for="cardNumber" class="pay__label">Número</label>
                         <input type="text" class="pay__input" formControlName="cardNumber" id="cardNumber"
-                            placeholder="e.g. 4557 9856 3622 8959" maxlength="19"  />
-                            <span class="errors-message" *ngIf="isVaidPayment('cardNumber')">{{getFieldErrorPayment("cardNumber")}}</span>
+                            placeholder="e.g. 4557 9856 3622 8959" />
+                            <span class="errors-message" *ngIf="isValidPayment('cardNumber')">{{getFieldErrorPayment('cardNumber')}}</span>
                     </div>
                     <div class="pay__box">
                         <label for="cardMonth" class="pay__label">Mes</label>
@@ -96,7 +109,7 @@
                             <option disabled selected value="">Mes</option>
                             <option *ngFor="let month of month" value="month">{{month}}</option>
                         </select>
-                        <span class="errors-message" *ngIf="isVaidPayment('cardMonth')">{{getFieldErrorPayment("cardMonth")}}</span>
+                        <span class="errors-message" *ngIf="isValidPayment('cardMonth')">{{getFieldErrorPayment("cardMonth")}}</span>
                     </div>
                     <div class="pay__box">
                         <label for="cardYear" class="pay__label">Año</label>
@@ -104,13 +117,13 @@
                             <option disabled selected value="">Año</option>
                             <option *ngFor="let year of year" [value]="year">{{year}}</option>
                         </select>
-                        <span class="errors-message" *ngIf="isVaidPayment('cardYear')">{{getFieldErrorPayment("cardYear")}}</span>
+                        <span class="errors-message" *ngIf="isValidPayment('cardYear')">{{getFieldErrorPayment("cardYear")}}</span>
                     </div>
                     <div class="pay__box">
                         <label for="cardCvv" class="pay__label">Código de Seguridad</label>
                         <input type="text" class="pay__input" id="cardCvv" formControlName="cardCvv" placeholder="CVV"
                             maxlength="4" />
-                            <span class="errors-message" *ngIf="isVaidPayment('cardCvv')">{{getFieldErrorPayment("cardCvv")}}</span>
+                            <span class="errors-message" *ngIf="isValidPayment('cardCvv')">{{getFieldErrorPayment("cardCvv")}}</span>
                     </div>
                 </div>
             </form>
@@ -118,21 +131,13 @@
         <div>
             <div class="checkout-group__button">
                 <a class="previus" (click)="previus()">
-                    <img src="../../../../../assets/icon/Arrow.svg" alt="arrow">
-                    <p>volver a la información</p>
+                    <i class="bx bx-chevron-left previus-icon"></i>
+                    <p>Volver a la información</p>
                 </a>
-            </div>
-            <div class="checkout__button">
                 <button type="submit" class="checkout__submit" (click)="onSubmit()">Pagar</button>
             </div>
+            <div class="checkout__button">
+            </div>
         </div>
-    </ng-container>
+    <!-- </ng-container> -->
 </article>
-<strong>FormGroup.value
-    <pre>{{ checkoutForm.value | json}}</pre>
-    <p> status: {{checkoutForm.status }}</p>
-</strong>
-<strong>FormGroup.value
-    <pre>{{ paymentForm.value | json}}</pre>
-    <p> status: {{paymentForm.status }}</p>
-</strong>

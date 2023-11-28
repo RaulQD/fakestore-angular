@@ -5,6 +5,7 @@
     justify-content: space-between;
     border-radius: 10px;
     cursor:pointer;
+    width:307px;
 }
 .card__product--img{
     width:100%;

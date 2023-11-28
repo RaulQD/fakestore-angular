@@ -99,7 +99,18 @@
     color: #bd0c0c;
 }  
 /*========= FORM CHECKOUT =========*/
-
+.pay-header__title{
+    font-size: 1.125rem;
+    color: #1D1F32;
+    margin-bottom: 0.75rem;
+    font-family: 'Poppins', sans-serif;
+}
+.pay-header__text{
+    font-size: 0.875rem;
+    color: #75869C;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
 .pay__content{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -182,7 +193,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1.5rem;
+    margin-top: 6rem;
 }
 .checkout__submit {
     background-color: #10727F;
@@ -226,9 +237,16 @@
     align-items: center;
 }
 
+.previus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    color:#3184FF;
 
-
-.errors-message{
-    font-size: 0.75rem;
-    color: #bd0c0c;
-}  
+}
+.previus-icon{
+    font-size: 1.25rem;
+    color:#3184FF;
+}

@@ -1,5 +1,5 @@
 import { Component, Input, inject } from '@angular/core';
-import { ItemsCart, Products } from '../../../../interface/products.interface';
+import {  Products } from '../../../../interface/products.interface';
 import { Router } from '@angular/router';
 import { StoreService } from 'src/app/service/store.service';
 
@@ -30,7 +30,6 @@ export class CardProdutsComponent {
       ...this.products,
       quantity: 1
     }
-
     this.storeService.addToCart(product);
   }
 }
