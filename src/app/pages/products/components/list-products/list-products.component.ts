@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { Products } from '../../../../interface/products.interface';
 import { ProductsService } from 'src/app/service/products.service';
 import Swal from 'sweetalert2';
-import { debounceTime, distinct } from 'rxjs';
+import { debounceTime, distinct, distinctUntilChanged } from 'rxjs';
 
 
 @Component({
@@ -30,10 +30,7 @@ export class ListProductsComponent implements OnInit {
   getProducts(): void {
     this.loadingProducts = true;
     setTimeout(() => {
-      this.productsService.searchProductsList$.pipe(
-        debounceTime(300),
-        distinct(),
-      ).subscribe((products) => {
+      this.productsService.searchProductsList$.subscribe((products) => {
         this.productsList = products;
         this.loadingProducts = false;
         this.notFound = this.productsList.length > 0 ? false : true;

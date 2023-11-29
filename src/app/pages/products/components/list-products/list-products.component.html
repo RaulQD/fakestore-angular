@@ -1,31 +1,35 @@
 <shared-spinner *ngIf="loadingProducts"></shared-spinner>
-<div class="products-container grid" *ngIf="!notFound">
-     <app-card-produts *ngFor="let products of productsList.slice(startWith,visibilityProductsCount)"
+<div *ngIf="!notFound">
+     <div  class="products-container grid">
+          <app-card-produts *ngFor="let products of productsList.slice(startWith,visibilityProductsCount)"
           [products]="products"></app-card-produts>
-</div>
-<div *ngIf="notFound">
-     <div class="empty-container">
-          <div class="empty">
-               <img src="../../../../../assets/icon/no-searching.svg" alt="empty">
-               <p class="empty-text">No hay productos</p>
-          </div>
+     </div>
+     
+     <div class="load-products">
+          <button class="load-button" type="button" (click)="loadProducts()" [disabled]="isLoading">
+               <span *ngIf="!isLoading">cargar más productos</span>
+               <div class="loader" *ngIf="isLoading">
+                    <div>
+                         <div class="sk-chase">
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                              <div class="sk-chase-dot"></div>
+                         </div>
+                    </div>
+                    <p class="loader-text">Cargando...</p>
+               </div>
+          </button>
      </div>
 </div>
-<div class="load-products">
-     <button class="load-button" type="button" (click)="loadProducts()" [disabled]="isLoading">
-          <span *ngIf="!isLoading">cargar más productos</span>
-          <div class="loader" *ngIf="isLoading">
-               <div>
-                    <div class="sk-chase">
-                         <div class="sk-chase-dot"></div>
-                         <div class="sk-chase-dot"></div>
-                         <div class="sk-chase-dot"></div>
-                         <div class="sk-chase-dot"></div>
-                         <div class="sk-chase-dot"></div>
-                         <div class="sk-chase-dot"></div>
-                    </div>
-               </div>
-               <p class="loader-text">Cargando...</p>
+<div *ngIf="notFound">
+     <div class="empty">
+          <div class="empty-container">
+               <p class="empty-message">Lo sentimos, no encontramos resultados para este producto.</p>
+               <span class="empty-text"> Tal vez su búsqueda fue demasiado específica, intente buscar con un término más general.</span>
+               <img src="../../../../../assets/icon/no-searching.svg" alt="empty" class="empty-img">
           </div>
-     </button>
+     </div>
 </div>

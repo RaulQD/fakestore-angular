@@ -22,13 +22,13 @@ import { ProductsService } from 'src/app/service/products.service';
       .search-box input {
           width: 400px;
           padding: 0.75rem 1rem ;
-          border: 1px solid #ccc;
+          border: 1px solid #75869c;
           border-radius: 4px;
           font-size: 14px;
           outline: none;
       }
       .search-box input::placeholder{
-          color: #ccc;
+          color:#75869c;
       }
 
       .search-box .search-icon {
@@ -70,6 +70,7 @@ export class SharedSearchComponent implements OnInit, OnDestroy {
     const title = this.inputSearch.nativeElement.value;
     this.subscription = this.searchResultService.searchProducts(title).subscribe((products) => {
       this.productsList = products;
+      console.log(title, this.productsList);
     });
   }
 }

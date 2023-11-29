@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'shared-spinner',
-    template: `
+        selector: 'shared-spinner',
+        template: `
         
             <div class="spinner">
                 <div>
@@ -22,13 +22,15 @@ import { Component, Input, OnInit } from '@angular/core';
             </div>
         
     `,
-    styles: [`
+        styles: [`
             .spinner{
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 align-items: center;
+                gap:1rem;
                 width: 100%;
+                height: 100vh;
+                margin-top:5rem;
             }
             .sk-cube-grid {
                 width: 40px;
@@ -94,7 +96,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class SpinnerComponent implements OnInit {
-    @Input() loadingProducts: boolean = false;
+        @Input() loadingProducts: boolean = false;
 
-    ngOnInit() { }
+        ngOnInit() { }
 }
