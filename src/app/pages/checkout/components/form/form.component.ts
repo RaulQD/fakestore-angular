@@ -32,7 +32,7 @@ export class FormComponent implements OnInit {
         reference: ['', [Validators.required]],
     })
     paymentForm: FormGroup = this.formBuilder.group({
-        cardNumber: ['', [Validators.required, CustomValidators.onlyNumbers, Validators.maxLength(16),Validators.minLength(16)]],
+        cardNumber: ['', [Validators.required, CustomValidators.onlyNumbers, Validators.maxLength(16), Validators.minLength(16)]],
         cardName: ['', [Validators.required]],
         cardMonth: ['', [Validators.required]],
         cardYear: ['', [Validators.required]],
@@ -111,6 +111,7 @@ export class FormComponent implements OnInit {
         this.checkoutForm.reset();
         this.paymentForm.reset();
         this.storeService.removeAllCartItems();
+
     }
 
 }

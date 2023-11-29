@@ -98,8 +98,24 @@ export class StoreService {
         //envia el carrito de compras actualizado
         this._shoppingCart.next(items);
         // Eliminar todos los items del carrito de compras en el local storage
-        this.saveLocalStorage(items);
-        console.log('carrito vacio', items);
+        this.clearLocalStorage();
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+            }
+          });
 
     }
     removeQuantity(item: ItemsCart): void {
@@ -117,7 +133,9 @@ export class StoreService {
         this.saveLocalStorage(this._cartItems);
         console.log('item eliminado', this._cartItems);
     }
-
+    private clearLocalStorage(): void {
+        localStorage.removeItem('cart');
+    }
     //lOCAL STORAGE
     private saveLocalStorage(cartItem: ItemsCart[]): void {
         localStorage.setItem('cart', JSON.stringify(cartItem));

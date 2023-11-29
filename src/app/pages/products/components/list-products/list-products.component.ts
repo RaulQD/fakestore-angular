@@ -23,12 +23,6 @@ export class ListProductsComponent implements OnInit{
   isLoading: boolean = false;
   private productsService = inject(ProductsService);
 
-
-
-  constructor() {
-  }
- 
-
   ngOnInit(): void {
     this.productsService.searchProductsList$.pipe(
       debounceTime(300),

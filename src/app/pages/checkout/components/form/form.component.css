@@ -99,6 +99,12 @@
     color: #bd0c0c;
 }  
 /*========= FORM CHECKOUT =========*/
+.divider{
+    background-color: #E3E5ED;
+    height: 1px;
+    width:100%;
+    margin: 2.5rem 0;
+}
 .pay-header__title{
     font-size: 1.125rem;
     color: #1D1F32;
@@ -108,7 +114,7 @@
 .pay-header__text{
     font-size: 0.875rem;
     color: #75869C;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     font-family: 'Poppins', sans-serif;
 }
 .pay__content{
@@ -150,38 +156,32 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.card__bank-logo {
-    margin-bottom: 2rem;
+.options-img{
+    width:50px;
 }
-.card__bank {
-    color: var(--white-color);
-    letter-spacing: 2px;
-    background-image: url('../../../../../assets/img/bg-card-front.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-    max-width: 400px;
-    /* height: 307px; */
-    padding: 20px 20px 0px 20px;
+.pay__options{
+    border: 1px solid #E3E5ED;
+    border-radius: 10px;
+    padding: 0.75rem;
 }
-.card__bank-number {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.card__details {
+.pay__options-box{
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 500;
-    color:#ffffff;
+    align-items: center;
 }
-.card__bank-number{
-    font-size: 16px;
-    font-weight: 500;
-    color:#ffffff;
+.pay__options-text{
+    font-size: 14px;
+    color: #1D1F32;
+}
+.pay-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.pay-img .options-img:nth-child(3){
+    width:80px;
+    height: 40px;
 }
 .checkout__button {
     display: flex;
@@ -244,6 +244,7 @@
     gap: 0.25rem;
     font-size: 0.875rem;
     color:#3184FF;
+    cursor: pointer;
 
 }
 .previus-icon{

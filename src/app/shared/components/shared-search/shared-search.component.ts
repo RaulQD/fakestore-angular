@@ -48,12 +48,14 @@ import { ProductsService } from 'src/app/service/products.service';
 export class SharedSearchComponent implements OnInit, OnDestroy {
 
 
+  /* The `@ViewChild('inputSearch') inputSearch!: ElementRef<HTMLInputElement>;` line is declaring a
+  ViewChild decorator that allows the component to access a reference to an element in the template. */
   @ViewChild('inputSearch') inputSearch!: ElementRef<HTMLInputElement>;
 
   public productsList: Products[] = [];
   subscription!: Subscription;
   private searchResultService = inject(ProductsService);
-  private router = inject(Router);
+ 
 
   ngOnInit(): void {
     this.subscription = this.searchResultService.getAllProducts().subscribe();
@@ -61,10 +63,14 @@ export class SharedSearchComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+  /**
+   * The `onSearch()` function retrieves the value of an input field, calls a service to search for
+   * products based on that value, and logs the search title and resulting products to the console.
+   */
   onSearch() {
     const title = this.inputSearch.nativeElement.value;
-    this.subscription = this.searchResultService.searchProducts(title).subscribe((products) => {
-      console.log('newTag', { title }, { products });
+    this.subscription = this.searchResultService.searchProducts(title).subscribe((products) => { 
+      this.productsList = products;
     });
   }
 }
