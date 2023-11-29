@@ -34,10 +34,6 @@
 }
 .card__action{
     padding: 0 0.75rem 0.75rem 0.75rem;
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap:1rem; */
 }
 .add__button--cart{
     background-color: transparent;

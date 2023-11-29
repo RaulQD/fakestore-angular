@@ -1,13 +1,12 @@
 .products-body{
     padding: 7rem 0 1rem;
-    width:100%;
 }
 .products-section{
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  gap:2.5rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
-.aside{
+/* .aside{
     width: 270px;
     display: flex;
     flex-direction: column;
@@ -19,7 +18,7 @@
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 1rem;
-}
+} */
 .list__products{
     display: flex;
     flex-direction: column;

@@ -1,5 +1,4 @@
 import { Component, ElementRef, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Products } from 'src/app/interface/products.interface';
 import { ProductsService } from 'src/app/service/products.service';
@@ -55,7 +54,7 @@ export class SharedSearchComponent implements OnInit, OnDestroy {
   public productsList: Products[] = [];
   subscription!: Subscription;
   private searchResultService = inject(ProductsService);
- 
+
 
   ngOnInit(): void {
     this.subscription = this.searchResultService.getAllProducts().subscribe();
@@ -69,7 +68,7 @@ export class SharedSearchComponent implements OnInit, OnDestroy {
    */
   onSearch() {
     const title = this.inputSearch.nativeElement.value;
-    this.subscription = this.searchResultService.searchProducts(title).subscribe((products) => { 
+    this.subscription = this.searchResultService.searchProducts(title).subscribe((products) => {
       this.productsList = products;
     });
   }

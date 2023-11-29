@@ -1,7 +1,15 @@
-
-<div class="products-container grid" *ngIf="productsList.length >= 0">
+<shared-spinner *ngIf="loadingProducts"></shared-spinner>
+<div class="products-container grid" *ngIf="!notFound">
      <app-card-produts *ngFor="let products of productsList.slice(startWith,visibilityProductsCount)"
           [products]="products"></app-card-produts>
+</div>
+<div *ngIf="notFound">
+     <div class="empty-container">
+          <div class="empty">
+               <img src="../../../../../assets/icon/no-searching.svg" alt="empty">
+               <p class="empty-text">No hay productos</p>
+          </div>
+     </div>
 </div>
 <div class="load-products">
      <button class="load-button" type="button" (click)="loadProducts()" [disabled]="isLoading">

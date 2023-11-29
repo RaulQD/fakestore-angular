@@ -1,10 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Contact } from 'src/app/interface/user.interface';
 import * as  customValidators from 'src/app/shared/validators/custom-validators';
 import { CustomValidators } from '../../../../shared/validators/custom-validators';
-import { DateService } from 'src/app/service/date.service';
 import { StoreService } from 'src/app/service/store.service';
+import { DateService } from 'src/app/service/date.service';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-form',
@@ -19,6 +21,7 @@ export class FormComponent implements OnInit {
     private formBuilder = inject(FormBuilder)
     private dateService = inject(DateService);
     private storeService = inject(StoreService);
+    private router = inject(Router);
 
     checkoutForm: FormGroup = this.formBuilder.group({
         email: ['', [Validators.required, Validators.pattern(customValidators.emailPattern)]],
@@ -108,10 +111,20 @@ export class FormComponent implements OnInit {
             this.paymentForm.markAllAsTouched();
             return;
         }
-        this.checkoutForm.reset();
-        this.paymentForm.reset();
-        this.storeService.removeAllCartItems();
 
+        Swal.fire({
+            icon: 'success',
+            title: 'Compra realizada con éxito',
+            text: 'Gracias por su compra',
+            confirmButtonText: 'Aceptar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                this.checkoutForm.reset();
+                this.paymentForm.reset();
+                this.storeService.removeAllCartItems();
+                this.router.navigate(['/fakestore/products']);
+            }
+        });
     }
 
 }

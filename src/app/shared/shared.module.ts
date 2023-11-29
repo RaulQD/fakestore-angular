@@ -12,6 +12,7 @@ import { NotificationsComponent } from './components/notifications/notifications
 
 import { CheckoutModule } from '../pages/checkout/checkout.module';
 import { ModalComponent } from './components/modal/modal.component';
+import { SpinnerComponent } from './components/loadingSpinner/loading-spinner.component';
 
 
 
@@ -19,8 +20,8 @@ import { ModalComponent } from './components/modal/modal.component';
 
 
 @NgModule({
-    declarations: [HeaderComponent, FooterComponent, SharedCartComponent, SharedSearchComponent, SharedWishlistComponent, NotificationsComponent, ModalComponent],
+    declarations: [HeaderComponent, FooterComponent, SharedCartComponent, SharedSearchComponent, SharedWishlistComponent, NotificationsComponent, ModalComponent, SpinnerComponent],
     imports: [CommonModule, HttpClientModule, RouterModule],
-    exports: [HeaderComponent, FooterComponent, SharedSearchComponent, NotificationsComponent, ModalComponent],
+    exports: [HeaderComponent, FooterComponent, SharedSearchComponent, NotificationsComponent, ModalComponent, SpinnerComponent],
 })
 export class SharedModule { }

@@ -11,27 +11,36 @@ import { debounceTime, distinct } from 'rxjs';
   templateUrl: './list-products.component.html',
   styleUrls: ['./list-products.component.css']
 })
-export class ListProductsComponent implements OnInit{
+export class ListProductsComponent implements OnInit {
 
   public productsList: Products[] = [];
-  private title: string = '';
-  private price: number = 0;
+  public notFound: boolean = false;
+  public loadingProducts: boolean = false;
 
-  visibilityProductsCount: number = 12;
-  startWith: number = 0;
-  noMoreProducts: boolean = false;
-  isLoading: boolean = false;
+
+  public visibilityProductsCount: number = 12;
+  public startWith: number = 0;
+  public isLoading: boolean = false;
   private productsService = inject(ProductsService);
 
   ngOnInit(): void {
-    this.productsService.searchProductsList$.pipe(
-      debounceTime(300),
-      distinct(),
-    ).subscribe((products) => {
-      this.productsList = products;
-    });
+    this.getProducts();
   }
 
+  getProducts(): void {
+    this.loadingProducts = true;
+    setTimeout(() => {
+      this.productsService.searchProductsList$.pipe(
+        debounceTime(300),
+        distinct(),
+      ).subscribe((products) => {
+        this.productsList = products;
+        this.loadingProducts = false;
+        this.notFound = this.productsList.length > 0 ? false : true;
+      });
+    }, 2000);
+
+  }
 
   loadProducts() {
     this.isLoading = true;
