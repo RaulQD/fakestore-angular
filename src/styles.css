@@ -9,6 +9,7 @@
 }
 body {
     /* line-height: 1.25; */
+    background-color: #fdfcfc;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -42,9 +43,17 @@ h4 {
 }
 
 .container {
+    /* width: 95%; */
     max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+}
+@media screen and (min-width: 768px) {
+    .container{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 .section {
     padding: 7rem 0 1rem;

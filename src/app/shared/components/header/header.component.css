@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #fdfcfc;
     z-index: 100;
     transition: 0.4;
 }
@@ -13,6 +13,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media screen and (min-width: 468px) {
+    .nav {}
 }
 
 .nav__logo {
@@ -27,7 +31,7 @@
     align-items: center;
     font-weight: 600;
     color: #0b0b0b;
-    font-size: 1.125rem;
+    font-size: 1rem;
 }
 
 .nav__logo-text {
@@ -35,19 +39,44 @@
 }
 
 .nav__logo-img {
-    width: 40px;
+    width: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100%;
+        padding: 15.2rem 3rem;
+        text-align: center;
+        box-shadow: 0px 0 10px rgba(0, 0, 0, 0.2);
+        background-color: #fdfcfc;
+        transition: .5s;
+        z-index: 100;
+    }
 }
 
 .nav__list {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
+}
+.nav__list-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
 }
 .button {
     background-color: transparent;
     border: none;
 }
+
 .nav__link {
     font-size: 0.875rem;
     color: #02021d;
@@ -71,40 +100,66 @@
     width: 20px;
     cursor: pointer;
 }
+
+@media screen and (min-width: 768px) {
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .nav__link {
+        font-size: 0.875rem;
+        color: #02021d;
+    }
+    .nav__list-icons{
+        gap: 1.5rem;
+    
+    }
+}
+
+
 .scrolled {
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
+
 .nav__cart {
-    background-color: transparent; 
+    background-color: transparent;
     border: none;
 }
-.nav__items{
+
+.nav__items {
     position: relative;
+    z-index: 99;
 }
-.button-item__badge{
+
+.button-item__badge {
     position: absolute;
-    top:-10px;
+    top: -10px;
     right: -8px;
     width: 15px;
     height: 15px;
     background-color: #098f9e;
     border-radius: 50%;
-    color:#ffffff;
+    color: #ffffff;
     font-size: 0.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* z-index:100; */
 }
 
 .dropdown {
     cursor: pointer;
-    position: relative;
 }
+
 .dropdown__button {
     background-color: transparent;
     border: none;
 }
+
 .dropdown__menu {
     position: absolute;
     top: 30px;
@@ -133,6 +188,7 @@
         transform: scale(0.99) translateY(-0.7em);
         transform-origin: top;
     }
+
     to {
         opacity: 1;
         transform: scale(1) translateY(0);
@@ -148,16 +204,19 @@
     cursor: pointer;
     color: #0b0b0b;
 }
-.dropdown__menu--item:hover { 
+
+.dropdown__menu--item:hover {
     color: #01727f;
     transition: color 0.4s;
 }
+
 .dropdown__button--item {
     background-color: transparent;
     border: none;
     font-size: 0.875rem;
 }
-.icon-out{
+
+.icon-out {
     font-size: 20px;
     cursor: pointer;
 }

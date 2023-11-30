@@ -11,8 +11,9 @@ import { StoreService } from 'src/app/service/store.service';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
 
-    scrolled = false;
-    showDropDown = false;
+    scrolled: boolean = false;
+    showDropDown: boolean = false;
+    showMenu: boolean = false;
     totalItems: number = 0;
     suscription!: Subscription;
     dataSource: Products[] = [];
@@ -40,20 +41,27 @@ export class HeaderComponent implements OnInit, OnDestroy {
         });
     }
     //TOOGLE CART
-    toogleCart() {
+    toggleCart() {
         this.sharedService.setShowCart(true);
     }
+    // //TOOGLE WISH LIST
+    // toogleWishList() {
+    //     this.sharedService.setShowWishlist(true);
+    // }
     //TOOGLE DROPDOWN
-    toogleDropdown() {
+    toggleDropdown() {
         this.showDropDown = !this.showDropDown;
     }
     closeDropdown() {
         this.showDropDown = false;
     }
     //modal
-    toogleModal() {
-
+    toggleModal() {
         //CERRAR EL MENU DESPLEGABLE
         this.showDropDown = false;
+    }
+    toogleMenu() {
+        this.showMenu = !this.showMenu;
+        console.log('toogleMenu abierto', this.showMenu);
     }
 }

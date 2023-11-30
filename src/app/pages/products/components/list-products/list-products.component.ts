@@ -16,7 +16,7 @@ export class ListProductsComponent implements OnInit {
   public productsList: Products[] = [];
   public notFound: boolean = false;
   public loadingProducts: boolean = false;
-
+  public messageProducts: string = 'Cargando productos';
 
   public visibilityProductsCount: number = 12;
   public startWith: number = 0;

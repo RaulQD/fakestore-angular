@@ -94,7 +94,7 @@ export class StoreService {
     }
     removeAllCartItems(): void {
         //resetea el carrito de compras a un array vacio y que no vote undefined
-        const items: ItemsCart[] = [...this._cartItems];
+        const items: ItemsCart[] = [];
         //envia el carrito de compras actualizado
         this._shoppingCart.next(items);
         // Eliminar todos los items del carrito de compras en el local storage

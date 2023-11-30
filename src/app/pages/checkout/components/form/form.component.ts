@@ -15,9 +15,11 @@ import Swal from 'sweetalert2';
 })
 export class FormComponent implements OnInit {
 
-    currentStep = 1;
-    user!: Contact;
-    year: number[] = [];
+    public currentStep = 1;
+    public year: number[] = [];
+    public isloadingPayment: boolean = false;
+    public messagePayment: string = 'Procesando pago...';
+
     private formBuilder = inject(FormBuilder)
     private dateService = inject(DateService);
     private storeService = inject(StoreService);
@@ -111,20 +113,24 @@ export class FormComponent implements OnInit {
             this.paymentForm.markAllAsTouched();
             return;
         }
+        this.isloadingPayment = true;
+        setTimeout(() => {
+            this.isloadingPayment = false;
+            Swal.fire({
+                icon: 'success',
+                title: 'Compra realizada con éxito',
+                text: 'Gracias por su compra',
+                confirmButtonText: 'Aceptar',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.checkoutForm.reset();
+                    this.paymentForm.reset();
+                    this.storeService.removeAllCartItems();
+                    this.router.navigate(['/fakestore/products']);
+                }
+            });
+        }, 2000);
 
-        Swal.fire({
-            icon: 'success',
-            title: 'Compra realizada con éxito',
-            text: 'Gracias por su compra',
-            confirmButtonText: 'Aceptar',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                this.checkoutForm.reset();
-                this.paymentForm.reset();
-                this.storeService.removeAllCartItems();
-                this.router.navigate(['/fakestore/products']);
-            }
-        });
     }
 
 }

@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-        selector: 'shared-spinner',
-        template: `
+    selector: 'shared-spinner',
+    template: `
         
             <div class="spinner">
                 <div>
@@ -18,19 +18,29 @@ import { Component, Input, OnInit } from '@angular/core';
                         <div class="sk-cube sk-cube9"></div>
                     </div>
                 </div>
-                <span class="visually-hidden">Cargando los productos.</span>
+                <span class="spinner-text">{{message}}</span>
             </div>
         
     `,
-        styles: [`
+    styles: [`
             .spinner{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap:1rem;
-                width: 100%;
-                height: 100vh;
-                margin-top:5rem;
+                justify-content: center;
+                z-index: 100;
+                font-weight: 600;
+            }
+            .spinner-text{
+                color: #ffffff;
+                /* font-size: 1.5rem; */
+                margin-top: 1rem;
             }
             .sk-cube-grid {
                 width: 40px;
@@ -40,7 +50,7 @@ import { Component, Input, OnInit } from '@angular/core';
             .sk-cube-grid .sk-cube {
                 width: 33%;
                 height: 33%;
-                background-color: #10727F;
+                background-color: #ffffff;
                 float: left;
                 -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
                         animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
@@ -96,7 +106,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class SpinnerComponent implements OnInit {
-        @Input() loadingProducts: boolean = false;
+    // @Input() loadingProducts: boolean = false;
+    @Input() message: string = '';
 
-        ngOnInit() { }
+    ngOnInit() { }
 }

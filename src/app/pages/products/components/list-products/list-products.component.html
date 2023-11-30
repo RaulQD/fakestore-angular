@@ -1,11 +1,11 @@
-<shared-spinner *ngIf="loadingProducts"></shared-spinner>
+<shared-spinner *ngIf="loadingProducts" [message]="messageProducts"></shared-spinner>
 <div *ngIf="!notFound">
      <div  class="products-container grid">
           <app-card-produts *ngFor="let products of productsList.slice(startWith,visibilityProductsCount)"
           [products]="products"></app-card-produts>
      </div>
      
-     <div class="load-products">
+     <div class="load-products" *ngIf="!loadingProducts">
           <button class="load-button" type="button" (click)="loadProducts()" [disabled]="isLoading">
                <span *ngIf="!isLoading">cargar más productos</span>
                <div class="loader" *ngIf="isLoading">
