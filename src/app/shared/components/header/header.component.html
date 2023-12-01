@@ -6,7 +6,8 @@
                 <span class="nav__logo-text">ake</span>Store
             </a>
         </div>
-        <div class="nav__menu">
+        <div class="overlay" [ngClass]="showMenu ? 'show-overlay' : ''" (click)="closeMenu()"></div>
+        <div class="nav__menu" [ngClass]="showMenu ? 'show-menu' : ''" (click)="closeMenu()">
             <ul class="nav__list" (click)=" closeDropdown()">
                 <li class="nav__items">
                     <a [routerLink]="['/fakestore/home']" routerLinkActive="active"
@@ -17,9 +18,6 @@
                         [routerLinkActiveOptions]="{ exact: true }" class="nav__link">Productos</a>
                 </li>
                 <li class="nav__items">
-                    <a [routerLink]="['/fakestore/accessories']" class="nav__link">Accesorios</a>
-                </li>
-                <li class="nav__items">
                     <a [routerLink]="['/fakestore/about']" routerLinkActive="active"
                         [routerLinkActiveOptions]="{ exact: true }" class="nav__link">Nosotros</a>
                 </li>
@@ -27,6 +25,11 @@
                     <a class="nav__link"> Soporte </a>
                 </li>
             </ul>
+            <div class="menu__close">
+                <button class="nav__link nav__cart" type="button" (click)="closeMenu()">
+                    <img src="../../../../assets/icon/close.svg" alt="close" class="nav__icons">
+                </button>
+            </div>
         </div>
         <div class="nav__cart">
             <ul class="nav__list-icons">

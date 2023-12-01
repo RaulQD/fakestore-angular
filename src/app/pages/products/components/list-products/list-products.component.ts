@@ -28,14 +28,13 @@ export class ListProductsComponent implements OnInit {
   }
 
   getProducts(): void {
-    this.loadingProducts = true;
-    setTimeout(() => {
-      this.productsService.searchProductsList$.subscribe((products) => {
-        this.productsList = products;
-        this.loadingProducts = false;
-        this.notFound = this.productsList.length > 0 ? false : true;
-      });
-    }, 2000);
+
+    this.productsService.searchProductsList$.subscribe((products) => {
+      this.productsList = products;
+
+      this.notFound = this.productsList.length > 0 ? false : true;
+    });
+
 
   }
 

@@ -64,4 +64,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.showMenu = !this.showMenu;
         console.log('toogleMenu abierto', this.showMenu);
     }
+    closeMenu() {
+        this.showMenu = false;
+        console.log('toogleMenu cerrado', this.showMenu);
+    }
 }

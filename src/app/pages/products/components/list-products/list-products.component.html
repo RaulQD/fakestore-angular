@@ -1,4 +1,4 @@
-<shared-spinner *ngIf="loadingProducts" [message]="messageProducts"></shared-spinner>
+
 <div *ngIf="!notFound">
      <div  class="products-container grid">
           <app-card-produts *ngFor="let products of productsList.slice(startWith,visibilityProductsCount)"
