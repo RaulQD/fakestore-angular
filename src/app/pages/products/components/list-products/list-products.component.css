@@ -1,5 +1,5 @@
 .products-container {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
 }
 
 .load-products {
@@ -131,27 +131,75 @@
 }
 
 /*======= NOT FOUND =======*/
-.empty{
+.empty {
   margin-top: 2rem;
   height: 100vh;
 }
-.empty-container{
+
+.empty-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-.empty-img{
+
+.empty-img {
   width: 100%;
-  max-width: 250px;
+  max-width: 200px;
 }
-.empty-message{
-  font-size: 1.75rem;
+
+.empty-message {
+  font-size: 1.25rem;
   color: #0d0c0c;
 }
-.empty-text{
-  font-size: 1rem;
+
+.empty-text {
+  font-size: 0.75rem;
   color: #75869c;
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 340px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .empty-text {
+    font-size: 0.875rem;
+  }
+
+  .empty-message {
+    font-size: 1.375rem;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media screen and (min-width: 1023px) {
+  .products-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .empty-message {
+    font-size: 1.75rem;
+  }
+
+  .empty-text {
+    font-size: 1rem;
+  }
+
+  .empty-img {
+    max-width: 250px;
+  }
 }

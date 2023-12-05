@@ -20,11 +20,11 @@ import { ProductsService } from 'src/app/service/products.service';
       }
 
       .search-box input {
-          width: 400px;
           padding: 0.75rem 1rem ;
           border: 1px solid #75869c;
           border-radius: 4px;
           font-size: 14px;
+          width:100%;
           outline: none;
       }
       .search-box input::placeholder{
@@ -40,10 +40,10 @@ import { ProductsService } from 'src/app/service/products.service';
           color: var(--primary-color);
           font-size: 22px;
       }
-      @media screen and (max-width: 340px) {
-          .search-box input {
-              width: 100%;
-          }
+      @media screen and (min-width: 563px) {
+        .search-box input{
+          width: 400px;
+        }
       }
     `,
   ],
