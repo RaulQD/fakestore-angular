@@ -20,4 +20,4 @@ import { ContentComponent } from './components/content/content.component';
     ],
     imports: [CommonModule, HomeRoutingModule],
 })
-export class HomeModule {}
+export class HomeModule { }

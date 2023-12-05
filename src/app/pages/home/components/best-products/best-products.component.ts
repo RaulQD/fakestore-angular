@@ -7,7 +7,7 @@ import { ImageCardProducts } from 'src/app/interface/productImage.interface';
     styleUrls: ['./best-products.component.css'],
 })
 export class BestProductsComponent {
-    products: ImageCardProducts[] = [
+    imagesProducts: ImageCardProducts[] = [
         {
             icon: '../../../assets/img/polera1.png',
             error: 'product1',

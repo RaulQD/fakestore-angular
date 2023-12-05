@@ -19,13 +19,8 @@
         </div>
     </section>
     <section class="category section">
-        <h2 class="category__title">Nueva Categoria</h2>
-        <div class="category__container container grid">
-            <app-category
-                *ngFor="let image of imageCategory"
-                [imageCategory]="image"
-            ></app-category>
-        </div>
+        <h2 class="section__title">Nueva Categoria</h2>
+        <app-category></app-category>
     </section>
     <section class="best section">
         <app-best-products></app-best-products>

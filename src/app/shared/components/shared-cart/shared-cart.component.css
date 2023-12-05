@@ -24,9 +24,9 @@
     top: 0;
     right: -100%;
     background-color: #ffffff;
-    width: 85%;
-    max-width: 450px;
-    min-width: 280px;
+    width: 70%;
+    /* max-width: 250px;
+    min-width: 180px; */
     height: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -265,4 +265,7 @@
 .empty-img {
     width: 100%;
     max-width: 200px;
+}
+@media screen and (min-width: 767px) {
+    
 }

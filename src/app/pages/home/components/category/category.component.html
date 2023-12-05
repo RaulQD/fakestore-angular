@@ -1,9 +1,11 @@
-<article class="category__card">
-    <img [src]="imageCategory.url" [alt]="imageCategory.alt" class="category__image" />
-    <a class="category__link" [routerLink]="['/fakestore/products']">
-        <div class="category__data">
-            <h2 class="category__name">{{ imageCategory.title }}</h2>
-            <span class="category__text">{{ imageCategory.text }}</span>
-        </div>
-    </a>
-</article>
+<div class="container category__container grid" >
+    <article class="category__card" *ngFor="let category of imageCategory">
+        <img [src]="category.url" [alt]="category.alt" class="category__image" />
+        <a class="category__link" [routerLink]="['/fakestore/products']">
+            <div class="category__data">
+                <h2 class="category__name">{{ category.title }}</h2>
+                <span class="category__text">{{ category.text }}</span>
+            </div>
+        </a>
+    </article>
+</div>

@@ -2,8 +2,9 @@
     background-color: #f5f6f8;
     padding: 3rem 1.5rem 1.5rem 1.5rem;
     border-radius: 0.625rem;
+    width: 270px;
 }
 .best__card--img {
-    width: 270px;
-    margin-bottom: 3rem;
+    /* width: 270px; */
+    margin-bottom: 1rem;
 }

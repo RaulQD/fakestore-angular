@@ -1,19 +1,18 @@
 .best__container {
-    grid-template-columns: repeat(3, max-content);
     justify-content: center;
     gap: 1.875rem;
-    /* width: 954px; */
+    padding-bottom: 5rem;
 }
 
 .best__title {
     text-align: center;
-    margin-bottom: 4rem;
 }
 .best__button {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
 }
+
 .best__button--product {
     background-color: #01727f;
     border: none;
@@ -24,6 +23,37 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .best__button--product:hover {
     background-color: #015c6f;
+}
+
+.best__card {
+    background-color: #f5f6f8;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    border-radius: 0.625rem;
+    width: 270px;
+}
+
+.best__card--img {
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 340px) {
+    .best__card {
+        width: 230px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .best__container {
+        grid-template-columns: repeat(2, max-content);
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .best__container {
+        grid-template-columns: repeat(3, max-content);
+        width: 954px;
+    }
 }

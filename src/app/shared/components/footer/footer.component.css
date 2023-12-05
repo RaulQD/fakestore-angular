@@ -71,7 +71,7 @@
 .footer__links:hover {
     color: #ffffff;
 }
-@media screen and (min-width: 568px) {
+@media screen and (min-width: 576px) {
     .footer__container {
         grid-template-columns: repeat(2, 1fr);
     }

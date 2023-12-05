@@ -7,5 +7,5 @@ import { ImageCardProducts } from 'src/app/interface/productImage.interface';
     styleUrls: ['./products-card.component.css'],
 })
 export class ProductsCardComponent {
-    @Input() imageProducts!: ImageCardProducts;
+
 }

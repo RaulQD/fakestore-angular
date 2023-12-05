@@ -39,7 +39,11 @@ import { ProductsService } from 'src/app/service/products.service';
           transform: translateY(-50%);
           color: var(--primary-color);
           font-size: 22px;
-
+      }
+      @media screen and (max-width: 340px) {
+          .search-box input {
+              width: 100%;
+          }
       }
     `,
   ],
