@@ -1,15 +1,20 @@
-<h2 class="section__title">Nuestros Productos</h2>
-<div class="best__container container grid">
-    <article class="best__card" *ngFor="let products of imagesProducts">
-        <img src="{{ products.icon }}" alt="{{ products.error }}" class="best__card--img" />
-        <div class="best__data">
-            <p class="best__data--name">{{ products.name }}</p>
-            <span class="best__data--text">{{
-                products.price | currency: 'S/.&nbsp;' : 'symbol-narrow'
-                }}</span>
+<section class=" section">
+    <div class="best">
+        <h2 class="section__title">Nuestros Productos</h2>
+        <div class="best__container container grid">
+            <article class="best__card" *ngFor="let products of imagesProducts">
+                <img src="{{ products.icon }}" alt="{{ products.error }}" class="best__card--img" />
+                <div class="best__data">
+                    <p class="best__data--name">{{ products.name }}</p>
+                    <span class="best__data--text">{{
+                        products.price | currency: 'S/.&nbsp;' : 'symbol-narrow'
+                        }}</span>
+                </div>
+            </article>
         </div>
-    </article>
-</div>
-<div class="best__button">
-    <a [routerLink]="['/fakestore/products']" class="best__button--product">Comprar Ahora</a>
-</div>
+        <div class="best__button">
+            <a [routerLink]="['/fakestore/products']" class="best__button--product">Comprar Ahora</a>
+        </div>
+    </div>
+
+</section>

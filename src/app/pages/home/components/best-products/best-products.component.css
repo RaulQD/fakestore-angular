@@ -1,7 +1,10 @@
+.best{
+    padding:3rem;
+}
 .best__container {
     justify-content: center;
     gap: 1.875rem;
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
 }
 
 .best__title {
@@ -10,7 +13,6 @@
 .best__button {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
 }
 
 .best__button--product {
