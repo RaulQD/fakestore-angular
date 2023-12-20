@@ -20,8 +20,8 @@
                     <div class="checkout__wrap">
                         <div class="checkout__box">
                             <label for="email" class="checkout__label">Correo electronico:</label>
-                            <input type="text" class="checkout__input" id="email" formControlName="email"
-                                autocomplete="off">
+                            <input type="email" class="checkout__input" id="email" formControlName="email"
+                                autocomplete="off" [class.error]="isValid('email')">
                             <span class="errors-message" *ngIf="isValid('email')">{{getFieldError("email")}}</span>
                         </div>
                         <div class="checkout__box">
@@ -83,78 +83,78 @@
         </form>
     </ng-container>
     <ng-container *ngIf="currentStep === 2">
-    <div class="pay__flex">
-        <div class="pay-header">
-            <h4 class="pay-header__title">Pago</h4>
-            <p class="pay-header__text">Todas las transacciones son seguras y encriptadas</p>
-        </div>
-        <div class="pay__options">
-            <div class="pay__options-box">
-                <div class="pay__options-text">
-                    <p>Metodos de pago</p>
-                </div>
-                <div class="pay-img">
-                    <img src="../../../../../assets/icon/visa.png" alt="visa" class="options-img">
-                    <img src="../../../../../assets/icon/mastercard.png" alt="mastercard" class="options-img">
-                    <img src="../../../../../assets/icon/dinners-club.png" alt="dinners-club" class="options-img">
+        <div class="pay__flex">
+            <div class="pay-header">
+                <h4 class="pay-header__title">Pago</h4>
+                <p class="pay-header__text">Todas las transacciones son seguras y encriptadas</p>
+            </div>
+            <div class="pay__options">
+                <div class="pay__options-box">
+                    <div class="pay__options-text">
+                        <p>Metodos de pago</p>
+                    </div>
+                    <div class="pay-img">
+                        <img src="../../../../../assets/icon/visa.png" alt="visa" class="options-img">
+                        <img src="../../../../../assets/icon/mastercard.png" alt="mastercard" class="options-img">
+                        <img src="../../../../../assets/icon/dinners-club.png" alt="dinners-club" class="options-img">
+                    </div>
                 </div>
             </div>
+            <div class="divider"></div>
+            <form class=" pay" [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+                <div class="pay__content">
+                    <div class="pay__box">
+                        <label for="cardName" class="pay__label">Nombre Completo</label>
+                        <input type="text" class="pay__input" formControlName="cardName" id="cardName"
+                            placeholder="e.g. John Dayner Restrillo Mancilla" [class.error]="isValidPayment('cardName')" />
+                        <span class="errors-message"
+                            *ngIf="isValidPayment('cardName')">{{getFieldErrorPayment('cardName')}}</span>
+                    </div>
+                    <div class="pay__box">
+                        <label for="cardNumber" class="pay__label">Número</label>
+                        <input type="password" class="pay__input" formControlName="cardNumber" id="cardNumber"
+                            placeholder="e.g. 4557 9856 3622 8959" />
+                        <span class="errors-message"
+                            *ngIf="isValidPayment('cardNumber')">{{getFieldErrorPayment('cardNumber')}}</span>
+                    </div>
+                    <div class="pay__box">
+                        <label for="cardMonth" class="pay__label">Mes</label>
+                        <select class="pay__input" id="cardMonth" formControlName="cardMonth">
+                            <option disabled selected value="">Mes</option>
+                            <option *ngFor="let month of month" value="month">{{month}}</option>
+                        </select>
+                        <span class="errors-message"
+                            *ngIf="isValidPayment('cardMonth')">{{getFieldErrorPayment("cardMonth")}}</span>
+                    </div>
+                    <div class="pay__box">
+                        <label for="cardYear" class="pay__label">Año</label>
+                        <select class="pay__input" id="cardYear" formControlName="cardYear">
+                            <option disabled selected value="">Año</option>
+                            <option *ngFor="let year of year" [value]="year">{{year}}</option>
+                        </select>
+                        <span class="errors-message"
+                            *ngIf="isValidPayment('cardYear')">{{getFieldErrorPayment("cardYear")}}</span>
+                    </div>
+                    <div class="pay__box">
+                        <label for="cardCvv" class="pay__label">Código de Seguridad</label>
+                        <input type="text" class="pay__input" id="cardCvv" formControlName="cardCvv" placeholder="CVV"
+                            maxlength="4" />
+                        <span class="errors-message"
+                            *ngIf="isValidPayment('cardCvv')">{{getFieldErrorPayment("cardCvv")}}</span>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="divider"></div>
-        <form class=" pay" [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
-            <div class="pay__content">
-                <div class="pay__box">
-                    <label for="cardName" class="pay__label">Nombre Completo</label>
-                    <input type="text" class="pay__input" formControlName="cardName" id="cardName"
-                        placeholder="e.g. John Dayner Restrillo Mancilla" [class.error]="isValidPayment" />
-                    <span class="errors-message"
-                        *ngIf="isValidPayment('cardName')">{{getFieldErrorPayment('cardName')}}</span>
-                </div>
-                <div class="pay__box">
-                    <label for="cardNumber" class="pay__label">Número</label>
-                    <input type="password" class="pay__input" formControlName="cardNumber" id="cardNumber"
-                        placeholder="e.g. 4557 9856 3622 8959" />
-                    <span class="errors-message"
-                        *ngIf="isValidPayment('cardNumber')">{{getFieldErrorPayment('cardNumber')}}</span>
-                </div>
-                <div class="pay__box">
-                    <label for="cardMonth" class="pay__label">Mes</label>
-                    <select class="pay__input" id="cardMonth" formControlName="cardMonth">
-                        <option disabled selected value="">Mes</option>
-                        <option *ngFor="let month of month" value="month">{{month}}</option>
-                    </select>
-                    <span class="errors-message"
-                        *ngIf="isValidPayment('cardMonth')">{{getFieldErrorPayment("cardMonth")}}</span>
-                </div>
-                <div class="pay__box">
-                    <label for="cardYear" class="pay__label">Año</label>
-                    <select class="pay__input" id="cardYear" formControlName="cardYear">
-                        <option disabled selected value="">Año</option>
-                        <option *ngFor="let year of year" [value]="year">{{year}}</option>
-                    </select>
-                    <span class="errors-message"
-                        *ngIf="isValidPayment('cardYear')">{{getFieldErrorPayment("cardYear")}}</span>
-                </div>
-                <div class="pay__box">
-                    <label for="cardCvv" class="pay__label">Código de Seguridad</label>
-                    <input type="text" class="pay__input" id="cardCvv" formControlName="cardCvv" placeholder="CVV"
-                        maxlength="4" />
-                    <span class="errors-message"
-                        *ngIf="isValidPayment('cardCvv')">{{getFieldErrorPayment("cardCvv")}}</span>
-                </div>
+        <div>
+            <div class="checkout-group__button">
+                <a class="previus" (click)="previus()">
+                    <i class="bx bx-chevron-left previus-icon"></i>
+                    <p>Volver a la información</p>
+                </a>
+                <button type="submit" class="checkout__submit" (click)="onSubmit()">Pagar</button>
             </div>
-        </form>
-    </div>
-    <div>
-        <div class="checkout-group__button">
-            <a class="previus" (click)="previus()">
-                <i class="bx bx-chevron-left previus-icon"></i>
-                <p>Volver a la información</p>
-            </a>
-            <button type="submit" class="checkout__submit" (click)="onSubmit()">Pagar</button>
+            <div class="checkout__button">
+            </div>
         </div>
-        <div class="checkout__button">
-        </div>
-    </div>
     </ng-container>
 </article>

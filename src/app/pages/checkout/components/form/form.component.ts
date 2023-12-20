@@ -29,12 +29,12 @@ export class FormComponent implements OnInit {
         email: ['', [Validators.required, Validators.pattern(customValidators.emailPattern)]],
         phone: ['', [Validators.required, CustomValidators.phoneNumbers]],
         firstName: ['', [Validators.required, CustomValidators.onlyLetters]],
-        lastName: ['', [Validators.required, Validators.pattern(customValidators.stringPattern)]],
+        lastName: ['', [Validators.required, CustomValidators.onlyLetters]],
         address: ['', [Validators.required, Validators.minLength(10)]],
         city: ['', [Validators.required]],
         district: ['', [Validators.required]],
         region: ['', [Validators.required]],
-        reference: ['', [Validators.required]],
+        reference: ['', [Validators.required, Validators.minLength(20)]],
     })
     paymentForm: FormGroup = this.formBuilder.group({
         cardNumber: ['', [Validators.required, CustomValidators.onlyNumbers, Validators.maxLength(16), Validators.minLength(16)]],
@@ -61,7 +61,6 @@ export class FormComponent implements OnInit {
             switch (key) {
                 case 'required':
                     return 'Este campo es requerido.';
-
                 case 'minlength':
                     return `Debe tener Minimo ${errors['minlength']['requiredLength']} caracteres.`;
                 case 'pattern':
@@ -76,6 +75,7 @@ export class FormComponent implements OnInit {
         }
         return null;
     }
+
     isValidPayment(field: string) {
         return this.paymentForm.controls[field]?.touched && this.paymentForm.controls[field].errors;
     }
@@ -108,6 +108,7 @@ export class FormComponent implements OnInit {
     previus() {
         this.currentStep--;
     }
+
     onSubmit() {
         if (this.paymentForm.invalid) {
             this.paymentForm.markAllAsTouched();
@@ -120,6 +121,11 @@ export class FormComponent implements OnInit {
                 icon: 'success',
                 title: 'Compra realizada con éxito',
                 text: 'Gracias por su compra',
+                customClass: {
+                    title: 'title-class',
+                    icon: 'custom-popup-icon-class',
+
+                },
                 confirmButtonText: 'Aceptar',
             }).then((result) => {
                 if (result.isConfirmed) {

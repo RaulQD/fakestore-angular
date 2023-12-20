@@ -58,7 +58,8 @@
 }
 .quantity-number{
     border: 1px solid #d7d7d7;
-    border-radius: 10px;
+    border-radius: 4px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
