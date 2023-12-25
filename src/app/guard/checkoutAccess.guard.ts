@@ -7,16 +7,9 @@ export const checkoutAccessGuard: CanActivateFn = (route, state) => {
   //Verificar si mi carrito de compras tiene productos
   const storeService = inject(StoreService);
   const router = inject(Router);
-  const total = storeService.getTotal();
+  const cartItems = storeService._cartItems.length;
   //verificar con operador ternario
-  total > 0 ? true : router.navigate(['/fakestore/products']), console.log('No hay productos en el carrito');
-  ;
-  // if (total > 0) {
-  //   return true;
-  // } else {
-  //   router.navigate(['/fakestore/products']);
-  //   console.log('No hay productos en el carrito')
-  //   return false;
-  // }
+  cartItems > 0 ? true : router.navigate(['/fakestore/products']), console.log('No hay productos en el carrito');
+
   return true;
 };

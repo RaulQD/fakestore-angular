@@ -3,7 +3,7 @@
     position: relative;
 }
 .footer__container {
-    padding: 5rem 0;
+    padding: 5rem 0 2rem;
 }
 .footer__content {
     display: flex;
@@ -71,6 +71,14 @@
 }
 .footer__links:hover {
     color: #ffffff;
+}
+.copy{
+    color: #ffffff;
+    font-size: 0.875rem;
+}
+.copy__text{
+    text-align: center;
+    padding: 2rem 0;
 }
 @media screen and (min-width: 576px) {
     .footer__container {

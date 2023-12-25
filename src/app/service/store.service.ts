@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 })
 export class StoreService {
 
-    private _cartItems: ItemsCart[] = [];
+    public _cartItems: ItemsCart[] = [];
 
     private _shoppingCart = new BehaviorSubject<ItemsCart[]>([]);
     shoppingCart$ = this._shoppingCart.asObservable();

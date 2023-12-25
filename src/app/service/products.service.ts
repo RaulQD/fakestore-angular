@@ -33,6 +33,13 @@ export class ProductsService {
             }),
         )
     }
+    /**
+     * The function `getProductById` retrieves a product from an API based on its ID and returns an
+     * Observable that emits the product or undefined if an error occurs.
+     * @param {number} id - The `id` parameter is a number that represents the unique identifier of a
+     * product.
+     * @returns an Observable of type `Products` or `undefined`.
+     */
     getProductById(id: number): Observable<Products | undefined> {
         return this.http.get<Products>(`${this.apiUrl}/products/${id}`)
             .pipe(
@@ -54,9 +61,6 @@ export class ProductsService {
             catchError((err) => {
                 return of([]);
             }),
-            tap((products) => {
-                this.setSearchProducts(products);
-            })
         );
     }
 
