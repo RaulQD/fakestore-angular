@@ -17,6 +17,7 @@ export class StoreService {
         this.loadLocalStorage();
     }
 
+    //AGREGA UN PRODUCTO AL CARRITO
     addToCart(cartItem: ItemsCart): void {
         //Crea una copia del carrito de compras para evitar modificar el original
         const items: ItemsCart[] = [...this._cartItems];
@@ -55,12 +56,14 @@ export class StoreService {
         });
         this.saveLocalStorage(items);
     }
+    //OBTIENE EL TOTAL DE TODO LOS PRODUCTSO EN EL CARRITO
     getTotal() {
         const items: ItemsCart[] = [...this._cartItems];
         //retorna el total de la suma de los precios de los items
         const total: number = items.map((item) => item.price * item.quantity).reduce((prev, current) => prev + current, 0);
         return total;
     }
+    //REMOVER UN ITEM DEL CARRITO
     removeCartItems(cartItem: ItemsCart) {
         //filtra los items que no coincidan con el id del item a eliminar
         const filterItems: ItemsCart[] = this._cartItems.filter((item) => item.id !== cartItem.id);
@@ -92,6 +95,7 @@ export class StoreService {
 
         return this._cartItems = [...filterItems];
     }
+    //REMOVER TODOS LOS ITEMS DEL CARRITO
     removeAllCartItems(): void {
         //resetea el carrito de compras a un array vacio y que no vote undefined
         const items: ItemsCart[] = [];
@@ -101,6 +105,7 @@ export class StoreService {
         this.clearLocalStorage();
 
     }
+    //DISMINUIR LA CANTIDAD DE UN ITEM DEL CARRITO
     removeQuantity(item: ItemsCart): void {
         //itera sobre cada item del array _cartItems y comprueba si el id del item coincide con el id del parametro item
         this._cartItems.map((cartItem) => {
@@ -116,13 +121,16 @@ export class StoreService {
         this.saveLocalStorage(this._cartItems);
         console.log('item eliminado', this._cartItems);
     }
+    //LIMPIAR LOCAL STORAGE
     private clearLocalStorage(): void {
         localStorage.clear();
     }
     //lOCAL STORAGE
+    //GUARDAR EN EL LOCAL STORAGE
     private saveLocalStorage(cartItem: ItemsCart[]): void {
         localStorage.setItem('cart', JSON.stringify(cartItem));
     }
+    //CARGAR DEL LOCAL STORAGE
     private loadLocalStorage(): void {
         const storedItems: string | null = localStorage.getItem('cart');
         if (storedItems) {

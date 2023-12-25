@@ -12,6 +12,7 @@ export class MyaccountComponent {
     const socialMediaURL: { [key: string]: string } = {
       'LinkedIn': 'https://www.linkedin.com/in/raulqd/',
       'GitHub': 'https://github.com/RaulQD',
+      'WhatsApp': 'https://wa.pe/dnvY2iQiHq',
 
     }
     //HASOWNPROPERTY: devuelve un valor booleano que indica si el objeto tiene la propiedad especificada como propiedad directa del objecto en cuestion.

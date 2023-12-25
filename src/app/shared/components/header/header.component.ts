@@ -1,5 +1,6 @@
 import { Component, HostListener, OnDestroy, OnInit, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { navigationData } from 'src/app/interface/navigation';
 import { Products } from 'src/app/interface/products.interface';
 import { SharedService } from 'src/app/service/shared.service';
 import { StoreService } from 'src/app/service/store.service';
@@ -11,6 +12,7 @@ import { StoreService } from 'src/app/service/store.service';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
 
+    navigationData = navigationData;
     scrolled: boolean = false;
     showDropDown: boolean = false;
     showMenu: boolean = false;

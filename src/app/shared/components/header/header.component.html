@@ -9,21 +9,11 @@
         <div class="overlay" [ngClass]="showMenu ? 'show-overlay' : ''" (click)="closeMenu()"></div>
         <div class="nav__menu" [ngClass]="showMenu ? 'show-menu' : ''" (click)="closeMenu()">
             <ul class="nav__list" (click)=" closeDropdown()">
-                <li class="nav__items">
-                    <a [routerLink]="['/fakestore/home']" routerLinkActive="active"
-                        [routerLinkActiveOptions]="{ exact: true }" class="nav__link">Inicio</a>
+                <li class="nav__items" *ngFor="let data of navigationData">
+                    <a [routerLink]="[data.routerLink]" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }" class="nav__link">{{data.name}}</a>
                 </li>
-                <li class="nav__items">
-                    <a [routerLink]="['/fakestore/products']" routerLinkActive="active"
-                        [routerLinkActiveOptions]="{ exact: true }" class="nav__link">Productos</a>
-                </li>
-                <li class="nav__items">
-                    <a [routerLink]="['/fakestore/about']" routerLinkActive="active"
-                        [routerLinkActiveOptions]="{ exact: true }" class="nav__link">Nosotros</a>
-                </li>
-                <li class="nav__items">
-                    <a class="nav__link"> Soporte </a>
-                </li>
+                
             </ul>
             <div class="menu__close">
                 <button class="nav__link nav__cart" type="button" (click)="closeMenu()">

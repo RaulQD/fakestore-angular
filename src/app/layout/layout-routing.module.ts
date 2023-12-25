@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout.component';
+import { checkoutAccessGuard } from '../guard/checkoutAccess.guard';
 
 
 const routes: Routes = [
@@ -42,6 +43,7 @@ const routes: Routes = [
             },
             {
                 path: 'checkout',
+                canActivate: [checkoutAccessGuard],
                 loadChildren: () =>
                     import('../pages/checkout/checkout.module').then(
                         (m) => m.CheckoutModule
