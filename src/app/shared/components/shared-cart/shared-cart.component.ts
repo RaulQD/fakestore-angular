@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 
@@ -76,7 +76,7 @@ export class SharedCartComponent implements OnInit, OnDestroy {
             }).fire({
                 icon: 'warning',
                 title: 'Solo puedes llevar 10 productos'
-            
+
             });
         }
     }
