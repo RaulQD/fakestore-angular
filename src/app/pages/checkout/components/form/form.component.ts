@@ -41,7 +41,7 @@ export class FormComponent implements OnInit {
         cardName: ['', [Validators.required]],
         cardMonth: ['', [Validators.required]],
         cardYear: ['', [Validators.required]],
-        cardCvv: ['', [Validators.required, CustomValidators.cvv, CustomValidators.onlyNumbers, Validators.maxLength(3), Validators.minLength(3)]],
+        cardCvv: ['', [Validators.required, CustomValidators.cvv, CustomValidators.onlyNumbers, Validators.maxLength(4), Validators.minLength(3)]],
     })
 
     ngOnInit(): void {

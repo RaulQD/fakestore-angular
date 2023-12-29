@@ -137,8 +137,7 @@
                     </div>
                     <div class="pay__box">
                         <label for="cardCvv" class="pay__label">Código de Seguridad</label>
-                        <input type="text" class="pay__input" id="cardCvv" formControlName="cardCvv" placeholder="CVV"
-                            maxlength="4" />
+                        <input type="text" class="pay__input" id="cardCvv" formControlName="cardCvv" placeholder="CVV"/>
                         <span class="errors-message"
                             *ngIf="isValidPayment('cardCvv')">{{getFieldErrorPayment("cardCvv")}}</span>
                     </div>
