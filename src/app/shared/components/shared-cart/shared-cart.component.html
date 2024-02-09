@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <a [routerLink]="['/fakestore/checkout']" class="cart__buy--btn" (click)="toogleCart()">
+                <a (click)=" redirecToCheckout()" class="cart__buy--btn" (click)="toogleCart()">
                     <img src="../../../../assets/icon/shopping-cart.svg" alt="shopping-cart" class="cart__shop" />
                     Continuar compra
                 </a>
@@ -84,3 +84,4 @@
         </div>
     </ng-template>
 </aside>
+<shared-spinner *ngIf="isLoadingCheckout" [message]="messageCheckout"></shared-spinner>

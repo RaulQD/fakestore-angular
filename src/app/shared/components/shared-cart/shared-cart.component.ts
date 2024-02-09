@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
@@ -20,9 +21,12 @@ export class SharedCartComponent implements OnInit, OnDestroy {
     totalItems: number = 0;
     emptyMessage: boolean = false;
     cartEmpty: boolean = false;
+    isLoadingCheckout: boolean = false;
+    messageCheckout = 'Cargando formulario de pago'
 
     private sharedService = inject(SharedService);
     private storeService = inject(StoreService);
+    private router = inject(Router);
 
     ngOnDestroy(): void {
         this.subscription.unsubscribe();
@@ -86,5 +90,13 @@ export class SharedCartComponent implements OnInit, OnDestroy {
 
     toogleCart() {
         this.sharedService.setShowCart(false);
+    }
+    redirecToCheckout() {
+        this.isLoadingCheckout = true;
+        setTimeout(() => {
+            this.isLoadingCheckout = false;
+            this.router.navigate(['/fakestore/checkout']);
+        }, 3000);
+        console.log('redirecToCheckout checkout')
     }
 }
